@@ -37,8 +37,8 @@ const faqs = [
   },
 ];
 
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div
@@ -48,6 +48,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     >
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="flex w-full items-center justify-between text-left p-5 cursor-pointer"
       >
         <span className="text-sm font-semibold pr-4">{q}</span>
@@ -78,13 +79,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export function FAQSection() {
   return (
-    <section className="px-6 py-20 bg-surface border-t border-border">
+    <section id="faq" className="px-6 py-20 bg-surface border-t border-border scroll-mt-16">
       <div className="mx-auto max-w-3xl">
         <p className="text-sm font-medium text-accent mb-3">FAQ</p>
         <h2 className="text-2xl font-bold md:text-3xl">Common questions</h2>
         <div className="mt-10 space-y-3">
-          {faqs.map((faq) => (
-            <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+          {faqs.map((faq, i) => (
+            <FAQItem key={faq.q} q={faq.q} a={faq.a} defaultOpen={i === 0} />
           ))}
         </div>
       </div>
