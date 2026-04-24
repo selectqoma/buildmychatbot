@@ -1,6 +1,7 @@
 import { HeroChatMockup } from "@/components/hero-chat-mockup";
 import { FAQSection } from "@/components/faq-section";
 import { CTAForm } from "@/components/cta-form";
+import { LogoMark, LogoWordmark } from "@/components/logo";
 
 export default function Home() {
   return (
@@ -26,11 +27,8 @@ function TopNav() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-white/75 border-b border-border/60">
       <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 text-sm font-semibold">
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-accent text-white text-[11px] font-bold">
-            b
-          </span>
-          <span>buildmychatbot</span>
+        <a href="/" className="inline-flex items-center" aria-label="buildmychatbot home">
+          <LogoWordmark size={22} />
         </a>
         <nav className="flex items-center gap-6 text-sm">
           <a
@@ -382,9 +380,8 @@ function About() {
     <section className="px-6 py-20 border-t border-border">
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-accent-dark text-white shadow-md shadow-accent/20">
-            <span className="text-2xl font-bold tracking-tight">b</span>
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/30" />
+          <div className="shrink-0 rounded-2xl bg-white p-3 shadow-md shadow-accent/10 ring-1 ring-border">
+            <LogoMark size={44} />
           </div>
           <div>
             <p className="text-sm font-medium text-accent mb-3">About</p>
@@ -437,7 +434,7 @@ function Footer() {
   return (
     <footer className="border-t border-border px-6 py-8 bg-surface/50">
       <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
-        <span className="font-medium">buildmychatbot.app</span>
+        <LogoWordmark size={18} />
         <div className="flex gap-6">
           <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
           <a href="/terms" className="hover:text-foreground transition-colors">Terms</a>
