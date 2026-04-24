@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - BuildMyChatbot",
+  title: "Terms of Service",
   description: "Terms of service for BuildMyChatbot.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

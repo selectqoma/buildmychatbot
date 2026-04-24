@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - BuildMyChatbot",
+  title: "Privacy Policy",
   description: "Privacy policy for BuildMyChatbot.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

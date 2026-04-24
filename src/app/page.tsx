@@ -1,11 +1,66 @@
 import { HeroChatMockup } from "@/components/hero-chat-mockup";
 import { FAQSection } from "@/components/faq-section";
+import { faqs } from "@/components/faq-data";
 import { CTAForm } from "@/components/cta-form";
 import { LogoMark, LogoWordmark } from "@/components/logo";
+
+const SITE = "https://buildmychatbot.app";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE}/#org`,
+      name: "BuildMyChatbot",
+      url: SITE,
+      logo: `${SITE}/icon.svg`,
+      email: "hello@buildmychatbot.app",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: SITE,
+      name: "BuildMyChatbot",
+      publisher: { "@id": `${SITE}/#org` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE}/#service`,
+      name: "Custom AI support agent build",
+      serviceType: "AI chatbot development",
+      provider: { "@id": `${SITE}/#org` },
+      areaServed: "Worldwide",
+      description:
+        "Custom AI support agent trained on your documentation. Fixed price, 2-week delivery, full ownership.",
+      offers: {
+        "@type": "Offer",
+        price: "3500",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: `${SITE}/#pricing`,
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE}/#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <TopNav />
       <main>
         <Hero />
