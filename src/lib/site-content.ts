@@ -452,7 +452,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "About",
       title: "Custom-built by engineers, not wrapped templates",
       body:
-        "BuildMyChatbot is a specialist service that builds production-grade support chatbots for software companies. Every build is custom: no templates, no white-label platforms, no shortcuts. We handle ingestion, tuning, deployment, and hand you the keys.",
+        "BuildMyChatbot is a specialist service that builds production-grade support chatbots for any business with documentation and repetitive customer questions — software, e-commerce, healthcare, financial services, education, hospitality, logistics. Every build is custom: no templates, no white-label platforms, no shortcuts. We handle ingestion, tuning, deployment, and hand you the keys.",
       bullets: [
         "RAG and retrieval tuning",
         "CRM, Slack, and workflow integrations",
