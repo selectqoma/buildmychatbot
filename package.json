@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "tattoo:local:setup": "uv venv .venv-tattoo --python 3.12 && uv pip install --python .venv-tattoo/bin/python -r requirements-tattoo-local.txt",
-    "tattoo:local": ".venv-tattoo/bin/python scripts/tattoo_local_sd15_server.py"
+    "lint": "eslint"
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.53",
