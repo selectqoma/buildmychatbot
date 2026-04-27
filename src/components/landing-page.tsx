@@ -30,6 +30,7 @@ export function LandingPage({ content }: { content: SiteContent }) {
       <HowItWorks content={content.process} />
       <WhatsIncluded content={content.deliverables} />
       <SecurityAndOwnership content={content.confidence} />
+      <AnalyticsPreview content={content.analytics} />
       <Pricing content={content.commercials} />
       <FAQSection content={content.faq} />
       <About content={content} />
@@ -534,6 +535,168 @@ function SecurityAndOwnership({
               </p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Analytics Preview ─── */
+function AnalyticsPreview({
+  content,
+}: {
+  content: SiteContent["analytics"];
+}) {
+  const traffic = [142, 168, 181, 196, 174, 92, 78, 188, 214, 232, 248, 226, 118, 96];
+  const max = Math.max(...traffic);
+  const topMax = Math.max(...content.topics.map((t) => t.count));
+
+  const w = 520;
+  const h = 140;
+  const pad = 8;
+  const stepX = (w - pad * 2) / (traffic.length - 1);
+  const points = traffic.map((v, i) => {
+    const x = pad + i * stepX;
+    const y = h - pad - ((v / max) * (h - pad * 2));
+    return { x, y, v };
+  });
+  const linePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(" ");
+  const areaPath = `${linePath} L ${points[points.length - 1].x.toFixed(1)} ${h - pad} L ${points[0].x.toFixed(1)} ${h - pad} Z`;
+
+  return (
+    <section className="border-t border-border bg-surface/40 px-6 py-20">
+      <div className="mx-auto max-w-5xl">
+        <div className="max-w-2xl">
+          <p className="mb-3 text-sm font-medium text-accent">{content.eyebrow}</p>
+          <h2 className="text-2xl font-bold md:text-3xl">{content.title}</h2>
+          <p className="mt-4 leading-relaxed text-muted">{content.body}</p>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-white shadow-lg shadow-black/5">
+          {/* Mock browser chrome */}
+          <div className="flex items-center gap-2 border-b border-border bg-surface/80 px-4 py-3">
+            <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+            <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
+            <div className="h-3 w-3 rounded-full bg-[#28c840]" />
+            <span className="ml-2 font-mono text-xs text-muted">app.buildmychatbot.app/dashboard</span>
+            <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-medium text-emerald-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              {content.hostedBadge}
+            </span>
+          </div>
+
+          <div className="grid gap-4 p-5 md:grid-cols-4">
+            {content.kpis.map((k) => {
+              const positive = k.delta.startsWith("+");
+              const negative = k.delta.startsWith("-");
+              return (
+                <div key={k.label} className="rounded-xl border border-border bg-white p-4">
+                  <p className="text-xs text-muted">{k.label}</p>
+                  <p className="mt-1.5 text-2xl font-bold tracking-tight">{k.value}</p>
+                  <p
+                    className={`mt-1 text-xs font-medium ${
+                      positive
+                        ? "text-emerald-600"
+                        : negative
+                          ? "text-rose-600"
+                          : "text-muted"
+                    }`}
+                  >
+                    {k.delta}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="grid gap-5 px-5 pb-5 md:grid-cols-5">
+            {/* Traffic chart */}
+            <div className="rounded-xl border border-border bg-white p-5 md:col-span-3">
+              <div className="flex items-baseline justify-between">
+                <h3 className="text-sm font-semibold">{content.trafficTitle}</h3>
+                <span className="text-xs text-muted">{content.trafficCaption}</span>
+              </div>
+              <div className="mt-4">
+                <svg viewBox={`0 0 ${w} ${h}`} className="w-full" preserveAspectRatio="none" role="img" aria-label={content.trafficTitle}>
+                  <defs>
+                    <linearGradient id="aArea" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.18" />
+                      <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  {[0.25, 0.5, 0.75].map((g) => (
+                    <line
+                      key={g}
+                      x1={pad}
+                      x2={w - pad}
+                      y1={pad + (h - pad * 2) * g}
+                      y2={pad + (h - pad * 2) * g}
+                      stroke="var(--border)"
+                      strokeDasharray="2 4"
+                    />
+                  ))}
+                  <path d={areaPath} fill="url(#aArea)" />
+                  <path d={linePath} fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  {points.map((p, i) => (
+                    <circle key={i} cx={p.x} cy={p.y} r={i === points.length - 1 ? 3.5 : 1.8} fill="var(--accent)" />
+                  ))}
+                </svg>
+                <div className="mt-2 flex justify-between text-[10px] font-mono text-muted/70">
+                  {content.weekdays.map((d, i) => (
+                    <span key={i}>{d}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Topics */}
+            <div className="rounded-xl border border-border bg-white p-5 md:col-span-2">
+              <div className="flex items-baseline justify-between">
+                <h3 className="text-sm font-semibold">{content.topicsTitle}</h3>
+                <span className="text-[10px] text-muted">{content.topicsCaption}</span>
+              </div>
+              <div className="mt-4 space-y-3">
+                {content.topics.map((t) => {
+                  const pct = Math.round((t.count / topMax) * 100);
+                  return (
+                    <div key={t.name}>
+                      <div className="flex items-baseline justify-between text-xs">
+                        <span className="font-medium">{t.name}</span>
+                        <span className="font-mono text-muted">{t.count.toLocaleString()}</span>
+                      </div>
+                      <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-surface">
+                        <div
+                          className="h-full rounded-full bg-accent"
+                          style={{ width: `${pct}%` }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Escalations */}
+          <div className="border-t border-border bg-surface/30 px-5 py-5">
+            <div className="flex items-baseline justify-between">
+              <h3 className="text-sm font-semibold">{content.escalationsTitle}</h3>
+              <span className="text-[10px] text-muted">{content.escalationsCaption}</span>
+            </div>
+            <ul className="mt-3 divide-y divide-border rounded-xl border border-border bg-white">
+              {content.escalations.map((e, i) => (
+                <li key={i} className="flex items-start gap-3 px-4 py-3">
+                  <span className="mt-1 inline-flex h-5 shrink-0 items-center rounded-full bg-amber-50 px-2 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+                    Low
+                  </span>
+                  <div className="min-w-0">
+                    <p className="truncate text-sm">{e.question}</p>
+                    <p className="mt-0.5 text-xs text-muted">{e.reason}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

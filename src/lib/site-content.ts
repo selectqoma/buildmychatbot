@@ -103,6 +103,22 @@ export type SiteContent = {
     body: string;
     points: Array<{ title: string; body: string }>;
   };
+  analytics: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    hostedBadge: string;
+    kpis: Array<{ label: string; value: string; delta: string }>;
+    trafficTitle: string;
+    trafficCaption: string;
+    topicsTitle: string;
+    topicsCaption: string;
+    topics: Array<{ name: string; count: number }>;
+    escalationsTitle: string;
+    escalationsCaption: string;
+    escalations: Array<{ question: string; reason: string }>;
+    weekdays: string[];
+  };
   commercials: {
     eyebrow: string;
     title: string;
@@ -328,6 +344,48 @@ export const siteContent: Record<Locale, SiteContent> = {
             "You receive source code, prompts, retrieval settings, deployment configs, and handover docs at delivery.",
         },
       ],
+    },
+    analytics: {
+      eyebrow: "Analytics, included",
+      title: "See exactly what your customers are asking",
+      body:
+        "Every conversation is logged, tagged, and surfaced in a dashboard you can hand to support, product, and ops. Trends show up before they become tickets.",
+      hostedBadge: "Hosted in EU · live demo data",
+      kpis: [
+        { label: "Conversations · 7d", value: "2,418", delta: "+18%" },
+        { label: "Auto-resolved", value: "61%", delta: "+4 pts" },
+        { label: "Avg confidence", value: "0.84", delta: "stable" },
+        { label: "Escalations", value: "147", delta: "-12%" },
+      ],
+      trafficTitle: "Conversations · last 14 days",
+      trafficCaption: "Daily volume, with weekend dips visible at a glance.",
+      topicsTitle: "What people are asking about",
+      topicsCaption: "Top intents over the last 7 days.",
+      topics: [
+        { name: "Pricing & plans", count: 412 },
+        { name: "Login & SSO", count: 318 },
+        { name: "Data export", count: 241 },
+        { name: "Integrations", count: 196 },
+        { name: "Refunds", count: 134 },
+        { name: "API limits", count: 98 },
+      ],
+      escalationsTitle: "Recent low-confidence handoffs",
+      escalationsCaption: "Sent to your support team, ready to triage.",
+      escalations: [
+        {
+          question: "Can I export billing as CSV with EU VAT lines?",
+          reason: "Outside indexed docs · routed to billing@",
+        },
+        {
+          question: "Does SSO work with our on-prem AD via SAML?",
+          reason: "Needs human confirmation · routed to support@",
+        },
+        {
+          question: "Why was my workspace downgraded after the trial?",
+          reason: "Account-specific · routed to success@",
+        },
+      ],
+      weekdays: ["M", "T", "W", "T", "F", "S", "S", "M", "T", "W", "T", "F", "S", "S"],
     },
     commercials: {
       eyebrow: "Commercials",
@@ -603,6 +661,48 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
+    analytics: {
+      eyebrow: "Analytique, inclus",
+      title: "Voyez ce que vos clients demandent vraiment",
+      body:
+        "Chaque conversation est enregistrée, étiquetée et visible dans un tableau de bord pour le support, le produit et les ops. Les tendances apparaissent avant les tickets.",
+      hostedBadge: "Hébergé en UE · données de démo",
+      kpis: [
+        { label: "Conversations · 7j", value: "2 418", delta: "+18 %" },
+        { label: "Résolues seules", value: "61 %", delta: "+4 pts" },
+        { label: "Confiance moy.", value: "0,84", delta: "stable" },
+        { label: "Escalades", value: "147", delta: "-12 %" },
+      ],
+      trafficTitle: "Conversations · 14 derniers jours",
+      trafficCaption: "Volume quotidien, avec les creux du week-end visibles.",
+      topicsTitle: "Sujets les plus demandés",
+      topicsCaption: "Intentions principales sur 7 jours.",
+      topics: [
+        { name: "Tarifs & forfaits", count: 412 },
+        { name: "Connexion & SSO", count: 318 },
+        { name: "Export de données", count: 241 },
+        { name: "Intégrations", count: 196 },
+        { name: "Remboursements", count: 134 },
+        { name: "Limites API", count: 98 },
+      ],
+      escalationsTitle: "Dernières escalades en faible confiance",
+      escalationsCaption: "Routées vers votre support, prêtes à triager.",
+      escalations: [
+        {
+          question: "Puis-je exporter la facturation en CSV avec les lignes TVA UE ?",
+          reason: "Hors docs indexées · routé vers billing@",
+        },
+        {
+          question: "Le SSO fonctionne-t-il avec notre AD on-prem en SAML ?",
+          reason: "Confirmation humaine requise · routé vers support@",
+        },
+        {
+          question: "Pourquoi mon espace a été rétrogradé après l'essai ?",
+          reason: "Spécifique au compte · routé vers success@",
+        },
+      ],
+      weekdays: ["L", "M", "M", "J", "V", "S", "D", "L", "M", "M", "J", "V", "S", "D"],
+    },
     commercials: {
       eyebrow: "Commercial",
       title: "Un devis fixe avant de commencer",
@@ -876,6 +976,48 @@ export const siteContent: Record<Locale, SiteContent> = {
             "Je ontvangt broncode, prompts, retrieval-instellingen, deployment-configs en handover-documentatie bij oplevering.",
         },
       ],
+    },
+    analytics: {
+      eyebrow: "Analytics, inbegrepen",
+      title: "Zie precies wat je klanten vragen",
+      body:
+        "Elke conversatie wordt gelogd, gelabeld en getoond in een dashboard voor support, product en ops. Trends zie je voordat ze tickets worden.",
+      hostedBadge: "Gehost in EU · demo-data",
+      kpis: [
+        { label: "Conversaties · 7d", value: "2.418", delta: "+18%" },
+        { label: "Auto-opgelost", value: "61%", delta: "+4 pt" },
+        { label: "Gem. zekerheid", value: "0,84", delta: "stabiel" },
+        { label: "Escalaties", value: "147", delta: "-12%" },
+      ],
+      trafficTitle: "Conversaties · laatste 14 dagen",
+      trafficCaption: "Dagvolume — weekenddips meteen zichtbaar.",
+      topicsTitle: "Waar mensen over vragen",
+      topicsCaption: "Top-intenties van de afgelopen 7 dagen.",
+      topics: [
+        { name: "Prijzen & abonnementen", count: 412 },
+        { name: "Login & SSO", count: 318 },
+        { name: "Data-export", count: 241 },
+        { name: "Integraties", count: 196 },
+        { name: "Terugbetalingen", count: 134 },
+        { name: "API-limieten", count: 98 },
+      ],
+      escalationsTitle: "Recente escalaties met lage zekerheid",
+      escalationsCaption: "Doorgestuurd naar je support, klaar om op te pakken.",
+      escalations: [
+        {
+          question: "Kan ik de facturatie als CSV exporteren met EU-btw-regels?",
+          reason: "Buiten geïndexeerde docs · naar billing@",
+        },
+        {
+          question: "Werkt SSO met onze on-prem AD via SAML?",
+          reason: "Menselijke bevestiging nodig · naar support@",
+        },
+        {
+          question: "Waarom is mijn workspace gedowngraded na de trial?",
+          reason: "Account-specifiek · naar success@",
+        },
+      ],
+      weekdays: ["M", "D", "W", "D", "V", "Z", "Z", "M", "D", "W", "D", "V", "Z", "Z"],
     },
     commercials: {
       eyebrow: "Commercieel",

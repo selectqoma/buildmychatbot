@@ -67,6 +67,9 @@ ${c.about.bullets.map((b) => `- ${b}`).join("\n")}
 FAQ:
 ${faqBlock}
 
+ANALYTICS DASHBOARD (included with hosted setups):
+Every conversation is logged, intent-tagged, and surfaced in a dashboard the customer's team can use. It shows: conversation volume over time, deflection / auto-resolve rate, average answer confidence, escalation count, top topics by intent, and a list of recent low-confidence handoffs with the routing destination. No PII is exposed by default — questions are pseudonymized. The dashboard is part of why hosting with us is worth it: support, product, and ops can see what customers are actually asking about and spot trends before they become tickets. Self-hosted deployments get the same data via a CSV/JSON export and a deployable dashboard image.
+
 PRICING APPROACH:
 We don't publish a list price — every project gets a fixed quote after a short scoping call. What moves the number up or down:
 - Hosting: shared EU instance is cheapest; a dedicated EU cloud instance costs more; running in the customer's own infrastructure adds setup work.
