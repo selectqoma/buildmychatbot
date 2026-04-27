@@ -548,7 +548,10 @@ function AnalyticsPreview({
   content: SiteContent["analytics"];
 }) {
   const traffic = [142, 168, 181, 196, 174, 92, 78, 188, 214, 232, 248, 226, 118, 96];
-  const max = Math.max(...traffic);
+  const rawMax = Math.max(...traffic);
+  const tickStep = 50;
+  const max = Math.ceil(rawMax / tickStep) * tickStep;
+  const yTicks = [max, Math.round(max / 2), 0];
   const topMax = Math.max(...content.topics.map((t) => t.count));
 
   const w = 520;
@@ -616,7 +619,13 @@ function AnalyticsPreview({
                 <h3 className="text-sm font-semibold">{content.trafficTitle}</h3>
                 <span className="text-xs text-muted">{content.trafficCaption}</span>
               </div>
-              <div className="mt-4 flex flex-1 flex-col">
+              <div className="mt-4 flex flex-1 gap-2">
+                <div className="flex flex-col justify-between py-1 text-[10px] font-mono text-muted/70 tabular-nums">
+                  {yTicks.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
+                </div>
+                <div className="flex flex-1 flex-col">
                 <svg viewBox={`0 0 ${w} ${h}`} className="h-full w-full flex-1" preserveAspectRatio="none" role="img" aria-label={content.trafficTitle}>
                   <defs>
                     <linearGradient id="aArea" x1="0" y1="0" x2="0" y2="1">
@@ -645,6 +654,7 @@ function AnalyticsPreview({
                   {content.weekdays.map((d, i) => (
                     <span key={i}>{d}</span>
                   ))}
+                </div>
                 </div>
               </div>
             </div>
