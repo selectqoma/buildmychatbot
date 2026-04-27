@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import type { SiteContent } from "@/lib/site-content";
 
-export function CTAForm() {
+export function CTAForm({ content }: { content: SiteContent["form"] }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -47,10 +48,9 @@ export function CTAForm() {
               d="m4.5 12.75 6 6 9-13.5"
             />
           </svg>
-          <p className="font-semibold text-foreground">Request received</p>
+          <p className="font-semibold text-foreground">{content.successTitle}</p>
           <p className="mt-1 text-sm text-muted">
-            We&apos;ll build a demo on your docs and get back to you within 24
-            hours.
+            {content.successBody}
           </p>
         </div>
       </div>
@@ -64,13 +64,13 @@ export function CTAForm() {
           type="email"
           name="email"
           required
-          placeholder="you@company.com"
+          placeholder={content.emailPlaceholder}
           className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
         />
         <input
           type="url"
           name="url"
-          placeholder="https://docs.yoursite.com"
+          placeholder={content.urlPlaceholder}
           className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
         />
         <button
@@ -78,7 +78,7 @@ export function CTAForm() {
           disabled={loading}
           className="w-full rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-accent/25 hover:bg-accent-dark hover:shadow-lg transition-all disabled:opacity-70"
         >
-          {loading ? "Sending..." : "Get a free demo"}
+          {loading ? content.submitting : content.submit}
         </button>
       </div>
     </form>

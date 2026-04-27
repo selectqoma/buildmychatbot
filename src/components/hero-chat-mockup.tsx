@@ -1,62 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect } from "react";
+import type { SiteContent } from "@/lib/site-content";
 
-type Turn =
-  | { role: "user"; text: string }
-  | { role: "bot"; text: string };
-
-const script: Turn[] = [
-  { role: "user", text: "How do I export my data?" },
-  {
-    role: "bot",
-    text: "Go to Settings → Data → Export. You can export as CSV or JSON. Exports include your workspace data from the last 90 days.",
-  },
-  { role: "user", text: "Can I get older data too?" },
-  {
-    role: "bot",
-    text: 'Yes — toggle "Include archived" on the same page. Workspaces with 10k+ records export in the background; you\'ll get an email when it\'s ready.',
-  },
-];
-
-export function HeroChatMockup() {
-  const [visible, setVisible] = useState<Turn[]>([]);
-  const [typing, setTyping] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
+export function HeroChatMockup({
+  content,
+}: {
+  content: SiteContent["heroChat"];
+}) {
+  const [step, setStep] = useState(0);
 
   useEffect(() => {
-    let cancelled = false;
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    const wait = (ms: number) =>
-      new Promise<void>((r) => timers.push(setTimeout(r, ms)));
-
-    async function run() {
-      await wait(600);
-      for (const turn of script) {
-        if (cancelled) return;
-        if (turn.role === "bot") {
-          setTyping(true);
-          await wait(900);
-          if (cancelled) return;
-          setTyping(false);
-        }
-        setVisible((v) => [...v, turn]);
-        await wait(turn.role === "user" ? 700 : 1800);
-      }
+    if (step < 2) {
+      const timer = setTimeout(
+        () => setStep((s) => s + 1),
+        step === 0 ? 800 : 1500
+      );
+      return () => clearTimeout(timer);
     }
+  }, [step]);
 
-    run();
-    return () => {
-      cancelled = true;
-      timers.forEach(clearTimeout);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  }, [visible, typing]);
+  const visibleMessages = content.messages.slice(0, step);
 
   return (
     <div className="rounded-2xl border border-border bg-white shadow-xl shadow-black/5 overflow-hidden">
@@ -64,17 +28,15 @@ export function HeroChatMockup() {
         <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
         <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
         <div className="h-3 w-3 rounded-full bg-[#28c840]" />
-        <span className="ml-2 text-xs text-muted font-mono">support-agent</span>
-        <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] text-muted/70 font-mono">
-          <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-          online
+        <span className="ml-2 text-xs text-muted font-mono">
+          {content.label}
+        </span>
+        <span className="ml-auto text-[10px] text-muted/60 font-mono">
+          {content.status}
         </span>
       </div>
-      <div
-        ref={scrollRef}
-        className="p-5 space-y-3 h-[260px] overflow-hidden"
-      >
-        {visible.map((msg, i) => (
+      <div className="p-5 space-y-3 min-h-[220px]">
+        {visibleMessages.map((msg, i) => (
           <div
             key={i}
             className={`flex animate-slide-in ${
@@ -82,26 +44,40 @@ export function HeroChatMockup() {
             }`}
           >
             <div
-              className={`max-w-[82%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+              className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                 msg.role === "user"
                   ? "bg-accent text-white rounded-br-md"
                   : "bg-surface text-foreground border border-border rounded-bl-md"
               }`}
             >
-              {msg.text}
+              <p>{msg.text}</p>
+              {"meta" in msg && (
+                <p
+                  className={`mt-2 text-[11px] font-medium ${
+                    msg.role === "user" ? "text-white/80" : "text-muted"
+                  }`}
+                >
+                  {msg.meta}
+                </p>
+              )}
             </div>
           </div>
         ))}
-        {typing && (
-          <div className="flex justify-start animate-slide-in">
-            <div className="bg-surface border border-border rounded-2xl rounded-bl-md px-4 py-3">
-              <div className="flex gap-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-muted/50 animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="h-1.5 w-1.5 rounded-full bg-muted/50 animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="h-1.5 w-1.5 rounded-full bg-muted/50 animate-bounce" style={{ animationDelay: "300ms" }} />
-              </div>
-            </div>
-          </div>
+        {step >= 2 && step < content.messages.length && (
+          <button
+            onClick={() => setStep((s) => s + 1)}
+            className="text-xs text-accent hover:text-accent-dark transition-colors cursor-pointer font-medium"
+          >
+            {content.next}
+          </button>
+        )}
+        {step >= content.messages.length && (
+          <button
+            onClick={() => setStep(0)}
+            className="text-xs text-muted hover:text-foreground transition-colors cursor-pointer"
+          >
+            {content.replay}
+          </button>
         )}
       </div>
     </div>
