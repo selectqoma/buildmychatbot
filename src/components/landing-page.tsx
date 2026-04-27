@@ -556,15 +556,15 @@ function AnalyticsPreview({
 
   const w = 520;
   const h = 140;
-  const pad = 8;
-  const stepX = (w - pad * 2) / (traffic.length - 1);
+  const padX = 8;
+  const stepX = (w - padX * 2) / (traffic.length - 1);
   const points = traffic.map((v, i) => {
-    const x = pad + i * stepX;
-    const y = h - pad - ((v / max) * (h - pad * 2));
+    const x = padX + i * stepX;
+    const y = h - (v / max) * h;
     return { x, y, v };
   });
   const linePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(" ");
-  const areaPath = `${linePath} L ${points[points.length - 1].x.toFixed(1)} ${h - pad} L ${points[0].x.toFixed(1)} ${h - pad} Z`;
+  const areaPath = `${linePath} L ${points[points.length - 1].x.toFixed(1)} ${h} L ${points[0].x.toFixed(1)} ${h} Z`;
 
   return (
     <section className="border-t border-border bg-surface/40 px-6 py-20">
@@ -619,42 +619,73 @@ function AnalyticsPreview({
                 <h3 className="text-sm font-semibold">{content.trafficTitle}</h3>
                 <span className="text-xs text-muted">{content.trafficCaption}</span>
               </div>
-              <div className="mt-4 flex flex-1 gap-2">
-                <div className="flex flex-col justify-between py-1 text-[10px] font-mono text-muted/70 tabular-nums">
-                  {yTicks.map((t) => (
-                    <span key={t}>{t}</span>
+              <div
+                className="mt-4 grid flex-1 gap-x-2 gap-y-2"
+                style={{ gridTemplateColumns: "auto 1fr", gridTemplateRows: "1fr auto" }}
+              >
+                <div className="flex flex-col justify-between text-[10px] font-mono leading-none text-muted/70 tabular-nums">
+                  {yTicks.map((t, i) => (
+                    <span
+                      key={t}
+                      className={
+                        i === 0
+                          ? "-translate-y-1/2"
+                          : i === yTicks.length - 1
+                            ? "translate-y-1/2"
+                            : ""
+                      }
+                    >
+                      {t}
+                    </span>
                   ))}
                 </div>
-                <div className="flex flex-1 flex-col">
-                <svg viewBox={`0 0 ${w} ${h}`} className="h-full w-full flex-1" preserveAspectRatio="none" role="img" aria-label={content.trafficTitle}>
+                <svg
+                  viewBox={`0 0 ${w} ${h}`}
+                  className="h-full w-full"
+                  preserveAspectRatio="none"
+                  role="img"
+                  aria-label={content.trafficTitle}
+                >
                   <defs>
                     <linearGradient id="aArea" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.18" />
                       <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
                     </linearGradient>
                   </defs>
-                  {[0.25, 0.5, 0.75].map((g) => (
+                  {[0, 0.5, 1].map((g) => (
                     <line
                       key={g}
-                      x1={pad}
-                      x2={w - pad}
-                      y1={pad + (h - pad * 2) * g}
-                      y2={pad + (h - pad * 2) * g}
+                      x1={padX}
+                      x2={w - padX}
+                      y1={Math.min(h - 0.5, Math.max(0.5, h * g))}
+                      y2={Math.min(h - 0.5, Math.max(0.5, h * g))}
                       stroke="var(--border)"
                       strokeDasharray="2 4"
                     />
                   ))}
                   <path d={areaPath} fill="url(#aArea)" />
-                  <path d={linePath} fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d={linePath}
+                    fill="none"
+                    stroke="var(--accent)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                   {points.map((p, i) => (
-                    <circle key={i} cx={p.x} cy={p.y} r={i === points.length - 1 ? 3.5 : 1.8} fill="var(--accent)" />
+                    <circle
+                      key={i}
+                      cx={p.x}
+                      cy={p.y}
+                      r={i === points.length - 1 ? 3.5 : 1.8}
+                      fill="var(--accent)"
+                    />
                   ))}
                 </svg>
-                <div className="mt-2 flex justify-between text-[10px] font-mono text-muted/70">
+                <div className="col-start-2 flex justify-between text-[10px] font-mono text-muted/70">
                   {content.weekdays.map((d, i) => (
                     <span key={i}>{d}</span>
                   ))}
-                </div>
                 </div>
               </div>
             </div>
@@ -775,35 +806,31 @@ function Pricing({ content }: { content: SiteContent["commercials"] }) {
 function About({ content }: { content: SiteContent }) {
   return (
     <section className="px-6 py-20 border-t border-border">
-      <div className="mx-auto max-w-3xl">
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="shrink-0">
-            <LogoMark
-              locale={content.locale}
-              label={content.common.homeLabel}
-            />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-accent mb-3">
-              {content.about.eyebrow}
-            </p>
-            <h2 className="text-2xl font-bold md:text-3xl">
-              {content.about.title}
-            </h2>
-            <p className="mt-4 text-muted leading-relaxed">
-              {content.about.body}
-            </p>
-            <div className="mt-6 grid gap-3 text-sm text-muted sm:grid-cols-3">
-              {content.about.bullets.map((bullet) => (
-                <div
-                  key={bullet}
-                  className="rounded-lg border border-border bg-white p-3"
-                >
-                  {bullet}
-                </div>
-              ))}
+      <div className="mx-auto max-w-3xl text-center">
+        <div className="flex justify-center mb-6">
+          <LogoMark
+            locale={content.locale}
+            label={content.common.homeLabel}
+          />
+        </div>
+        <p className="text-sm font-medium text-accent mb-3">
+          {content.about.eyebrow}
+        </p>
+        <h2 className="text-2xl font-bold md:text-3xl">
+          {content.about.title}
+        </h2>
+        <p className="mt-4 text-muted leading-relaxed max-w-2xl mx-auto">
+          {content.about.body}
+        </p>
+        <div className="mt-8 grid gap-3 text-sm text-muted sm:grid-cols-3 text-left">
+          {content.about.bullets.map((bullet) => (
+            <div
+              key={bullet}
+              className="rounded-lg border border-border bg-white p-3"
+            >
+              {bullet}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
