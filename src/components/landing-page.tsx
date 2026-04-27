@@ -758,49 +758,53 @@ function AnalyticsPreview({
                     </span>
                   ))}
                 </div>
-                <svg
-                  viewBox={`0 0 ${w} ${h}`}
-                  className="h-full w-full"
-                  preserveAspectRatio="none"
-                  role="img"
-                  aria-label={content.trafficTitle}
-                >
-                  <defs>
-                    <linearGradient id="aArea" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.18" />
-                      <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  {[0, 0.5, 1].map((g) => (
-                    <line
-                      key={g}
-                      x1={padX}
-                      x2={w - padX}
-                      y1={Math.min(h - 0.5, Math.max(0.5, h * g))}
-                      y2={Math.min(h - 0.5, Math.max(0.5, h * g))}
-                      stroke="var(--border)"
-                      strokeDasharray="2 4"
+                <div className="relative h-full w-full">
+                  <svg
+                    viewBox={`0 0 ${w} ${h}`}
+                    className="h-full w-full"
+                    preserveAspectRatio="none"
+                    role="img"
+                    aria-label={content.trafficTitle}
+                  >
+                    <defs>
+                      <linearGradient id="aArea" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.18" />
+                        <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    {[0, 0.5, 1].map((g) => (
+                      <line
+                        key={g}
+                        x1={padX}
+                        x2={w - padX}
+                        y1={Math.min(h - 0.5, Math.max(0.5, h * g))}
+                        y2={Math.min(h - 0.5, Math.max(0.5, h * g))}
+                        stroke="var(--border)"
+                        strokeDasharray="2 4"
+                      />
+                    ))}
+                    <path d={areaPath} fill="url(#aArea)" />
+                    <path
+                      d={linePath}
+                      fill="none"
+                      stroke="var(--accent)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
-                  ))}
-                  <path d={areaPath} fill="url(#aArea)" />
-                  <path
-                    d={linePath}
-                    fill="none"
-                    stroke="var(--accent)"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  </svg>
                   {points.map((p, i) => (
-                    <circle
+                    <span
                       key={i}
-                      cx={p.x}
-                      cy={p.y}
-                      r={i === points.length - 1 ? 3.5 : 1.8}
-                      fill="var(--accent)"
+                      aria-hidden="true"
+                      className="absolute h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-accent shadow-sm shadow-accent/20"
+                      style={{
+                        left: `${(p.x / w) * 100}%`,
+                        top: `${(p.y / h) * 100}%`,
+                      }}
                     />
                   ))}
-                </svg>
+                </div>
                 <div className="col-start-2 flex justify-between text-[10px] font-mono text-muted/70">
                   {content.weekdays.map((d, i) => (
                     <span key={i}>{d}</span>
