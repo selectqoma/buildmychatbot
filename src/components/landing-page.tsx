@@ -26,6 +26,7 @@ export function LandingPage({ content }: { content: SiteContent }) {
       />
       <Hero content={content} />
       <ProofTranscript content={content.transcript} />
+      <BrandAdaptation content={content.adaptation} />
       <Problem content={content.problem} />
       <HowItWorks content={content.process} />
       <WhatsIncluded content={content.deliverables} />
@@ -271,6 +272,124 @@ function ProofTranscript({
         </div>
       </div>
     </section>
+  );
+}
+
+/* ─── Brand Adaptation ─── */
+function BrandAdaptation({
+  content,
+}: {
+  content: SiteContent["adaptation"];
+}) {
+  return (
+    <section className="border-t border-border bg-surface/40 px-6 py-20">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+        <div>
+          <p className="mb-3 text-sm font-medium text-accent">
+            {content.eyebrow}
+          </p>
+          <h2 className="text-2xl font-bold md:text-3xl">
+            {content.title}
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted">
+            {content.body}
+          </p>
+          <ul className="mt-8 space-y-3 text-sm">
+            {content.points.map((point) => (
+              <li key={point} className="flex items-start gap-3">
+                <CheckIcon />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="grid items-stretch gap-5 md:grid-cols-3">
+          {content.sites.map((site) => (
+            <SiteSurface key={site.label} site={site} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SiteSurface({
+  site,
+}: {
+  site: SiteContent["adaptation"]["sites"][number];
+}) {
+  const themes = {
+    blue: {
+      page: "bg-[#eff6ff]",
+      nav: "bg-[#bfdbfe]",
+      accent: "bg-[#2563eb]",
+      soft: "bg-[#dbeafe]",
+      text: "text-[#1d4ed8]",
+      border: "border-[#bfdbfe]",
+    },
+    emerald: {
+      page: "bg-[#ecfdf5]",
+      nav: "bg-[#a7f3d0]",
+      accent: "bg-[#059669]",
+      soft: "bg-[#d1fae5]",
+      text: "text-[#047857]",
+      border: "border-[#a7f3d0]",
+    },
+    violet: {
+      page: "bg-[#f5f3ff]",
+      nav: "bg-[#ddd6fe]",
+      accent: "bg-[#7c3aed]",
+      soft: "bg-[#ede9fe]",
+      text: "text-[#6d28d9]",
+      border: "border-[#ddd6fe]",
+    },
+  }[site.theme];
+
+  return (
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-lg shadow-black/5">
+      <div className="flex items-center gap-1.5 border-b border-border bg-white px-3 py-2">
+        <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+        <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+        <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+        <span className="ml-2 truncate text-[10px] font-medium text-muted">
+          {site.label}
+        </span>
+      </div>
+      <div className={`flex min-h-[310px] flex-1 flex-col p-5 ${themes.page}`}>
+        <div className={`h-7 shrink-0 rounded-lg ${themes.nav}`} />
+        <div className="mt-3 space-y-1.5">
+          <div className={`h-3 w-24 rounded-full ${themes.accent}`} />
+          <div className="h-3 w-32 rounded-full bg-white" />
+          <div className="h-3 w-20 rounded-full bg-white" />
+        </div>
+        <div className="mt-4 flex h-[160px] flex-col rounded-xl bg-white p-3 shadow-sm">
+          <p className={`text-xs font-semibold ${themes.text}`}>
+            {site.headline}
+          </p>
+          <p className="mt-1 min-h-8 text-[11px] leading-relaxed text-muted">
+            {site.industry}
+          </p>
+          <div className="mt-auto grid grid-cols-3 gap-2">
+            <div className={`h-8 rounded-lg ${themes.soft}`} />
+            <div className={`h-8 rounded-lg ${themes.soft}`} />
+            <div className={`h-8 rounded-lg ${themes.soft}`} />
+          </div>
+        </div>
+        <div className="mt-4 flex h-[136px] flex-col rounded-2xl border border-white/70 bg-white p-3 shadow-xl shadow-black/10">
+          <div className="flex items-center gap-2">
+            <span className={`h-6 w-6 rounded-full ${themes.accent}`} />
+            <div>
+              <p className="text-[11px] font-semibold">{site.assistant}</p>
+              <p className="text-[10px] text-muted">Online</p>
+            </div>
+          </div>
+          <div className={`mt-auto flex min-h-[52px] items-center rounded-xl border ${themes.border} ${themes.soft} p-2`}>
+            <p className="text-[11px] leading-relaxed">{site.chat}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

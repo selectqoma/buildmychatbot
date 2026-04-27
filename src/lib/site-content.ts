@@ -78,6 +78,20 @@ export type SiteContent = {
     pill: string;
     messages: TranscriptMessage[];
   };
+  adaptation: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    sites: Array<{
+      label: string;
+      industry: string;
+      headline: string;
+      assistant: string;
+      chat: string;
+      theme: "blue" | "emerald" | "violet";
+    }>;
+    points: string[];
+  };
   problem: {
     eyebrow: string;
     title: string;
@@ -249,6 +263,43 @@ export const siteContent: Record<Locale, SiteContent> = {
           source: "Action: Escalate to support",
           confidence: "Confidence: Low",
         },
+      ],
+    },
+    adaptation: {
+      eyebrow: "Fits your product",
+      title: "One chatbot, matched to your website and brand",
+      body:
+        "The widget is not a generic bubble dropped onto the page. We adapt the tone, colors, shape, entry points, and handoff behavior so it feels native to your customer experience.",
+      sites: [
+        {
+          label: "B2B SaaS",
+          industry: "Documentation-heavy product",
+          headline: "Workspace settings",
+          assistant: "Linear support",
+          chat: "Can I invite external collaborators?",
+          theme: "blue",
+        },
+        {
+          label: "E-commerce",
+          industry: "Orders, returns, delivery",
+          headline: "Order status",
+          assistant: "Parcel help",
+          chat: "Where is my package?",
+          theme: "emerald",
+        },
+        {
+          label: "Healthcare",
+          industry: "Careful routing and privacy",
+          headline: "Patient portal",
+          assistant: "Care desk",
+          chat: "How do I reschedule an appointment?",
+          theme: "violet",
+        },
+      ],
+      points: [
+        "Works with modern websites, CMS pages, and custom frontends",
+        "Styled to your typography, colors, border radius, and tone of voice",
+        "Can appear as a chat widget, embedded assistant, or support intake flow",
       ],
     },
     problem: {
@@ -566,6 +617,43 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
+    adaptation: {
+      eyebrow: "Adapté à votre produit",
+      title: "Un chatbot qui respecte votre site et votre identité",
+      body:
+        "Le widget n'est pas une bulle générique posée sur la page. Nous adaptons le ton, les couleurs, les formes, les points d'entrée et le handoff pour qu'il semble faire partie de votre expérience client.",
+      sites: [
+        {
+          label: "B2B SaaS",
+          industry: "Produit riche en documentation",
+          headline: "Paramètres workspace",
+          assistant: "Support Linear",
+          chat: "Puis-je inviter des collaborateurs externes ?",
+          theme: "blue",
+        },
+        {
+          label: "E-commerce",
+          industry: "Commandes, retours, livraison",
+          headline: "Suivi de commande",
+          assistant: "Aide colis",
+          chat: "Où est mon colis ?",
+          theme: "emerald",
+        },
+        {
+          label: "Santé",
+          industry: "Routage prudent et confidentialité",
+          headline: "Portail patient",
+          assistant: "Accueil patient",
+          chat: "Comment déplacer un rendez-vous ?",
+          theme: "violet",
+        },
+      ],
+      points: [
+        "Compatible avec sites modernes, CMS et frontends sur mesure",
+        "Aligné sur votre typographie, vos couleurs, vos rayons et votre ton",
+        "Disponible comme widget chat, assistant intégré ou flux d'intake support",
+      ],
+    },
     problem: {
       eyebrow: "Le problème",
       title: "Cela vous parle ?",
@@ -880,6 +968,43 @@ export const siteContent: Record<Locale, SiteContent> = {
           source: "Actie: escaleren naar support",
           confidence: "Zekerheid: laag",
         },
+      ],
+    },
+    adaptation: {
+      eyebrow: "Past bij je product",
+      title: "Een chatbot die aansluit op je website en merk",
+      body:
+        "De widget is geen generieke bubbel die we zomaar op de pagina zetten. We stemmen toon, kleuren, vorm, ingangspunten en handoff af zodat hij native aanvoelt in je klantbeleving.",
+      sites: [
+        {
+          label: "B2B SaaS",
+          industry: "Documentatie-intensief product",
+          headline: "Workspace-instellingen",
+          assistant: "Linear support",
+          chat: "Kan ik externe medewerkers uitnodigen?",
+          theme: "blue",
+        },
+        {
+          label: "E-commerce",
+          industry: "Bestellingen, retouren, levering",
+          headline: "Orderstatus",
+          assistant: "Pakket hulp",
+          chat: "Waar is mijn pakket?",
+          theme: "emerald",
+        },
+        {
+          label: "Zorg",
+          industry: "Voorzichtige routing en privacy",
+          headline: "Patientenportaal",
+          assistant: "Patientenbalie",
+          chat: "Hoe verplaats ik een afspraak?",
+          theme: "violet",
+        },
+      ],
+      points: [
+        "Werkt met moderne websites, CMS-pagina's en custom frontends",
+        "Gestyled naar je typografie, kleuren, radius en tone of voice",
+        "Kan als chatwidget, ingebouwde assistent of support-intakeflow verschijnen",
       ],
     },
     problem: {
