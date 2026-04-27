@@ -611,13 +611,13 @@ function AnalyticsPreview({
 
           <div className="grid gap-5 px-5 pb-5 md:grid-cols-5">
             {/* Traffic chart */}
-            <div className="rounded-xl border border-border bg-white p-5 md:col-span-3">
+            <div className="flex flex-col rounded-xl border border-border bg-white p-5 md:col-span-3">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-sm font-semibold">{content.trafficTitle}</h3>
                 <span className="text-xs text-muted">{content.trafficCaption}</span>
               </div>
-              <div className="mt-4">
-                <svg viewBox={`0 0 ${w} ${h}`} className="w-full" preserveAspectRatio="none" role="img" aria-label={content.trafficTitle}>
+              <div className="mt-4 flex flex-1 flex-col">
+                <svg viewBox={`0 0 ${w} ${h}`} className="h-full w-full flex-1" preserveAspectRatio="none" role="img" aria-label={content.trafficTitle}>
                   <defs>
                     <linearGradient id="aArea" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.18" />
