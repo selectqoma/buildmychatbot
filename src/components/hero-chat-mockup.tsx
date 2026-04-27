@@ -1,21 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import type { SiteContent } from "@/lib/site-content";
 
-const messages = [
-  { role: "user" as const, text: "How do I export my data?" },
-  {
-    role: "bot" as const,
-    text: "Go to Settings > Data > Export. You can export as CSV or JSON. The export includes all your workspace data from the last 90 days.",
-  },
-  { role: "user" as const, text: "Can I export older data too?" },
-  {
-    role: "bot" as const,
-    text: 'Yes! Under the same Export page, toggle "Include archived data" to export your full history. For accounts with 10k+ records, the export runs in the background and you\'ll get an email when it\'s ready.',
-  },
-];
-
-export function HeroChatMockup() {
+export function HeroChatMockup({
+  content,
+}: {
+  content: SiteContent["heroChat"];
+}) {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
@@ -28,7 +20,7 @@ export function HeroChatMockup() {
     }
   }, [step]);
 
-  const visibleMessages = messages.slice(0, step);
+  const visibleMessages = content.messages.slice(0, step);
 
   return (
     <div className="rounded-2xl border border-border bg-white shadow-xl shadow-black/5 overflow-hidden">
@@ -37,10 +29,10 @@ export function HeroChatMockup() {
         <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
         <div className="h-3 w-3 rounded-full bg-[#28c840]" />
         <span className="ml-2 text-xs text-muted font-mono">
-          support-agent
+          {content.label}
         </span>
         <span className="ml-auto text-[10px] text-muted/60 font-mono">
-          live
+          {content.status}
         </span>
       </div>
       <div className="p-5 space-y-3 min-h-[220px]">
@@ -58,24 +50,33 @@ export function HeroChatMockup() {
                   : "bg-surface text-foreground border border-border rounded-bl-md"
               }`}
             >
-              {msg.text}
+              <p>{msg.text}</p>
+              {"meta" in msg && (
+                <p
+                  className={`mt-2 text-[11px] font-medium ${
+                    msg.role === "user" ? "text-white/80" : "text-muted"
+                  }`}
+                >
+                  {msg.meta}
+                </p>
+              )}
             </div>
           </div>
         ))}
-        {step >= 2 && step < messages.length && (
+        {step >= 2 && step < content.messages.length && (
           <button
             onClick={() => setStep((s) => s + 1)}
             className="text-xs text-accent hover:text-accent-dark transition-colors cursor-pointer font-medium"
           >
-            Next message...
+            {content.next}
           </button>
         )}
-        {step >= messages.length && (
+        {step >= content.messages.length && (
           <button
             onClick={() => setStep(0)}
             className="text-xs text-muted hover:text-foreground transition-colors cursor-pointer"
           >
-            Replay
+            {content.replay}
           </button>
         )}
       </div>

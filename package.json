@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "tattoo:local:setup": "uv venv .venv-tattoo --python 3.12 && uv pip install --python .venv-tattoo/bin/python -r requirements-tattoo-local.txt",
+    "tattoo:local": ".venv-tattoo/bin/python scripts/tattoo_local_sd15_server.py"
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.53",
@@ -27,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.85.0"
   }
 }

@@ -48,9 +48,9 @@ export default function TermsPage() {
               3. Pricing and Payment
             </h2>
             <p>
-              The setup fee is &euro;3,500, payable upon project agreement.
-              Optional ongoing support is &euro;500/month. All prices exclude
-              applicable taxes.
+              Pricing is agreed in writing before project kickoff and may
+              include a fixed build fee plus optional ongoing support. All
+              prices exclude applicable taxes unless otherwise stated.
             </p>
           </section>
 
