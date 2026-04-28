@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "BuildMyChatbot — Custom AI support agents for SaaS, deployed in 2 weeks";
+export const alt = "BuildMyChatbot - Your own AI agent that turns questions into customers";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,11 +54,11 @@ export default function OpengraphImage() {
               lineHeight: 1.05,
             }}
           >
-            <span>Your AI support agent,</span>
-            <span style={{ color: "#2563eb" }}>deployed in 2 weeks.</span>
+            <span>Your AI agent,</span>
+            <span style={{ color: "#2563eb" }}>built to sell and support.</span>
           </div>
           <div style={{ fontSize: 30, color: "#475569", lineHeight: 1.35, maxWidth: 940 }}>
-            Custom chatbot trained on your docs. Handles 40–60% of tier-1 questions. Fixed price. No lock-in.
+            Smooth customer conversations, clearer next steps, fixed scope, EU hosting, and full source handover.
           </div>
         </div>
 
@@ -72,7 +72,7 @@ export default function OpengraphImage() {
           }}
         >
           <span>buildmychatbot.app</span>
-          <span style={{ color: "#2563eb", fontWeight: 600 }}>€3,500 • 2-week delivery</span>
+          <span style={{ color: "#2563eb", fontWeight: 600 }}>Owned by you • 2-week delivery</span>
         </div>
       </div>
     ),

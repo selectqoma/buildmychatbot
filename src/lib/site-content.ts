@@ -178,9 +178,9 @@ export const siteContent: Record<Locale, SiteContent> = {
   en: {
     locale: "en",
     meta: {
-      title: "BuildMyChatbot | Customer service chatbots in two weeks",
+      title: "BuildMyChatbot | AI agents that turn questions into customers",
       description:
-        "We build customer service chatbots that answer from your help docs, escalate safely, and are yours to own.",
+        "We build your own AI agent to answer customer questions, guide people to the right next step, and hand serious enquiries to your team.",
     },
     common: {
       homeLabel: "BuildMyChatbot home",
@@ -190,18 +190,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageLabel: "Language",
     },
     hero: {
-      navCta: "Get a docs demo",
+      navCta: "Get a site demo",
       badge: "Scoped project fee. EU-hosted. Full source handover.",
-      titleTop: "An owned AI support agent,",
-      titleAccent: "live in two weeks.",
+      titleTop: "Your own AI agent",
+      titleAccent: "that helps your website sell.",
       subtitle:
-        "We build a source-grounded support agent on your help docs, connect it to your handoff flow, and hand over the code, prompts, and deployment configs. No platform lock-in. No guessing when the answer is not in your docs.",
-      primaryCta: "Get a free demo on your docs",
+        "We build a source-grounded agent on your website content and docs, connect it to your handoff flow, and hand over the code, prompts, and deployment configs. It answers questions, keeps visitors moving, and sends serious enquiries to your team with context.",
+      primaryCta: "Get a free demo on your site",
       secondaryCta: "Book a 15-min call",
       trustSignals: [
         "Answers from indexed sources",
-        "Low-confidence escalation",
-        "Slack, email, or widget handoff",
+        "Better visitor conversations",
+        "Slack, email, or CRM handoff",
       ],
     },
     heroChat: {
@@ -232,15 +232,15 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     transcript: {
       eyebrow: "See it in action",
-      title: "Grounded answers, safe escalation",
+      title: "Smooth answers, clearer next steps",
       body:
-        "The agent answers only from indexed content, keeps a source trail for review, and hands off when the answer needs human judgment.",
+        "The agent answers from approved content, keeps a source trail for review, and hands interested customers to your team when the conversation needs a human.",
       beforeLabel: "Before:",
-      before: "repeated billing, login, and setup tickets pile up in the queue.",
+      before: "visitors hesitate, search around, or leave when they cannot get a quick answer.",
       afterLabel: "After:",
       after:
-        "common questions get instant answers, risky ones become clean support handoffs.",
-      header: "Customer support",
+        "questions get answered, buying intent is captured, and risky cases become clean handoffs.",
+      header: "Customer conversation",
       pill: "source-grounded",
       messages: [
         {
@@ -267,9 +267,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     adaptation: {
       eyebrow: "Fits your product",
-      title: "One chatbot, matched to your website and brand",
+      title: "One agent, matched to your website and brand",
       body:
-        "The widget is not a generic bubble dropped onto the page. We adapt the tone, colors, shape, entry points, and handoff behavior so it feels native to your customer experience.",
+        "The widget is not a generic bubble dropped onto the page. We adapt the tone, colors, shape, entry points, and handoff behavior so it feels native to your customer experience and buying flow.",
       sites: [
         {
           label: "B2B SaaS",
@@ -307,18 +307,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Sound familiar?",
       items: [
         {
-          text: "Your support team answers the same 20 questions every day",
-          detail: "Repetitive tickets drain your team and slow response times.",
+          text: "Customers ask the same questions before they buy",
+          detail: "When answers are slow or hard to find, good visitors drop off.",
         },
         {
-          text: "Your help center exists but customers don't read it",
+          text: "Your website has the answers, but people still miss them",
           detail:
-            "The information is there. Customers just can't find it fast enough.",
+            "The information is there. Customers just need a faster path to the right answer.",
         },
         {
-          text: "Generic chatbots feel robotic and make things worse",
+          text: "Generic chatbots feel robotic and lose trust",
           detail:
-            "Canned responses frustrate users and escalate tickets instead of resolving them.",
+            "Canned responses frustrate users instead of helping them take the next step.",
         },
       ],
     },
@@ -328,13 +328,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       steps: [
         {
           num: "01",
-          title: "We ingest your docs",
-          desc: "Help center, FAQ, product pages. Up to 500 pages.",
+          title: "We ingest your content",
+          desc: "Website pages, FAQ, product or service docs. Up to 500 pages.",
         },
         {
           num: "02",
           title: "We build and tune the agent",
-          desc: "Answers in your tone, escalates when unsure.",
+          desc: "Answers in your tone, guides next steps, escalates when unsure.",
         },
         {
           num: "03",
@@ -370,9 +370,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     confidence: {
       eyebrow: "Production confidence",
-      title: "Built for support teams that need control",
+      title: "Built for teams that need control",
       body:
-        "The useful part is not just the answer. It is the handoff behavior, review trail, hosting posture, and the fact that you are not renting the core of your support workflow forever.",
+        "The useful part is not just the answer. It is the handoff behavior, review trail, hosting posture, and the fact that you are not renting the core of your customer conversations forever.",
       points: [
         {
           title: "EU-first hosting",
@@ -398,19 +398,19 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     analytics: {
       eyebrow: "Analytics, included",
-      title: "See exactly what your customers are asking",
+      title: "See what customers ask before they buy",
       body:
-        "Every conversation is logged, tagged, and surfaced in a dashboard you can hand to support, product, and ops. Trends show up before they become tickets.",
+        "Every conversation is logged, tagged, and surfaced in a dashboard you can hand to sales, support, product, and ops. You see what people want, what blocks them, and where your site needs clearer answers.",
       hostedBadge: "Hosted in EU · sample dashboard data",
       kpis: [
         { label: "Conversations · 7d", value: "2,418", delta: "+18%" },
-        { label: "Auto-resolved", value: "61%", delta: "+4 pts" },
+        { label: "Answered instantly", value: "61%", delta: "+4 pts" },
         { label: "Avg confidence", value: "0.84", delta: "stable" },
         { label: "Escalations", value: "147", delta: "-12%" },
       ],
       trafficTitle: "Conversations · last 14 days",
-      trafficCaption: "Daily volume, with weekend dips visible at a glance.",
-      topicsTitle: "What people are asking about",
+      trafficCaption: "Daily engagement, with weekend dips visible at a glance.",
+      topicsTitle: "What people ask before converting",
       topicsCaption: "Top intents over the last 7 days.",
       topics: [
         { name: "Pricing & plans", count: 412 },
@@ -420,8 +420,8 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Refunds", count: 134 },
         { name: "API limits", count: 98 },
       ],
-      escalationsTitle: "Recent low-confidence handoffs",
-      escalationsCaption: "Sent to your support team, ready to triage.",
+      escalationsTitle: "Recent handoffs",
+      escalationsCaption: "Sent to your team with the conversation context.",
       escalations: [
         {
           question: "Can I export billing as CSV with EU VAT lines?",
@@ -442,7 +442,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "Commercials",
       title: "A fixed quote before we start",
       body:
-        "We scope the build around your docs, handoff flow, and deployment needs, then agree the fee before any work begins.",
+        "We scope the build around your content, handoff flow, and deployment needs, then agree the fee before any work begins.",
       buildLabel: "Build",
       buildValue: "Fixed project quote",
       supportLabel: "Ongoing support",
@@ -451,7 +451,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       deliveryValue: "2 weeks",
       afterLabel: "After delivery",
       afterValue: "You own everything. No lock-in.",
-      cta: "Get a free demo on your docs",
+      cta: "Get a free demo on your site",
     },
     faq: {
       eyebrow: "FAQ",
@@ -460,7 +460,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           q: "How is this different from Intercom Fin / Zendesk AI?",
           a:
-            "Those are platform add-ons tied to their ecosystem. This is a standalone support agent built around your docs, workflows, escalation rules, and hosting needs. You can deploy it on your site, connect it to Slack or email, and keep the source code.",
+            "Those are platform add-ons tied to their ecosystem. This is a standalone customer-facing agent built around your content, workflows, escalation rules, and hosting needs. You can deploy it on your site, connect it to Slack, email, or CRM tools, and keep the source code.",
         },
         {
           q: "What LLM do you use?",
@@ -515,7 +515,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           q: "What do you need from us to start?",
           a:
-            "A docs or help center URL, the support topics you want to reduce, the handoff destination, any topics the agent must not answer, and your hosting or privacy constraints.",
+            "A website, docs, or help center URL, the questions you want handled better, the handoff destination, any topics the agent must not answer, and your hosting or privacy constraints.",
         },
         {
           q: "Who owns the code and deployment?",
@@ -538,7 +538,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "About",
       title: "Custom-built by engineers, not wrapped templates",
       body:
-        "BuildMyChatbot is a specialist service that builds production-grade support chatbots for any business with documentation and repetitive customer questions — software, e-commerce, healthcare, financial services, education, hospitality, logistics. Every build is custom: no templates, no white-label platforms, no shortcuts. We handle ingestion, tuning, deployment, and hand you the keys.",
+        "BuildMyChatbot is a specialist service that builds production-grade AI agents for businesses with clear content and repeated customer questions. Every build is custom: no templates, no white-label platforms, no shortcuts. We handle ingestion, tuning, deployment, and hand you the keys.",
       bullets: [
         "RAG and retrieval tuning",
         "CRM, Slack, and workflow integrations",
@@ -546,27 +546,27 @@ export const siteContent: Record<Locale, SiteContent> = {
       ],
     },
     finalCta: {
-      title: "Want a demo on your own docs?",
+      title: "Want a demo on your own site?",
       subtitle: "Free, no call required.",
       divider: "or",
       emailCta: "Send us an email",
     },
     form: {
       emailPlaceholder: "you@company.com",
-      urlPlaceholder: "https://docs.yoursite.com",
+      urlPlaceholder: "https://www.yoursite.com",
       submit: "Get a free demo",
       submitting: "Sending...",
       successTitle: "Request received",
       successBody:
-        "We'll build a demo on your docs and get back to you within 24 hours.",
+        "We'll build a demo on your site content and get back to you within 24 hours.",
     },
   },
   fr: {
     locale: "fr",
     meta: {
-      title: "BuildMyChatbot | Chatbots de service client en deux semaines",
+      title: "BuildMyChatbot | Agents IA qui transforment les questions en clients",
       description:
-        "Nous créons des chatbots de service client qui répondent à partir de votre documentation, escaladent prudemment et vous appartiennent.",
+        "Nous créons des agents IA propriétaires qui répondent aux questions clients, guident vers la bonne étape et transmettent les demandes sérieuses à votre équipe.",
     },
     common: {
       homeLabel: "Accueil BuildMyChatbot",
@@ -578,16 +578,16 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Recevoir une démo",
       badge: "Projet cadré. Hébergement UE. Code source remis.",
-      titleTop: "Votre agent support IA propriétaire,",
-      titleAccent: "en ligne en deux semaines.",
+      titleTop: "Votre agent IA propriétaire",
+      titleAccent: "qui aide votre site à vendre.",
       subtitle:
-        "Nous construisons un agent support sourcé sur votre documentation, le connectons à votre handoff, puis vous remettons le code, les prompts et les configs de déploiement. Pas de lock-in. Pas de réponse inventée si elle n'est pas dans vos docs.",
-      primaryCta: "Recevoir une démo sur vos docs",
+        "Nous construisons un agent sourcé sur le contenu de votre site et vos docs, le connectons à votre handoff, puis vous remettons le code, les prompts et les configs de déploiement. Il répond aux questions, garde les visiteurs engagés et transmet les demandes sérieuses avec le contexte.",
+      primaryCta: "Recevoir une démo sur votre site",
       secondaryCta: "Réserver 15 min",
       trustSignals: [
         "Réponses depuis des sources indexées",
-        "Escalade si confiance faible",
-        "Handoff Slack, email ou widget",
+        "Meilleures conversations visiteurs",
+        "Handoff Slack, email ou CRM",
       ],
     },
     heroChat: {
@@ -618,16 +618,16 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     transcript: {
       eyebrow: "Voir le fonctionnement",
-      title: "Réponses sourcées, escalade prudente",
+      title: "Réponses fluides, prochaines étapes claires",
       body:
-        "L'agent répond uniquement depuis le contenu indexé, conserve une trace des sources pour la revue et transmet à un humain quand la question demande du jugement.",
+        "L'agent répond depuis du contenu approuvé, conserve une trace des sources pour la revue et transmet à votre équipe quand la conversation demande un humain.",
       beforeLabel: "Avant :",
       before:
-        "les mêmes tickets de facturation, connexion et configuration s'empilent.",
+        "les visiteurs hésitent, cherchent trop longtemps ou quittent le site faute de réponse rapide.",
       afterLabel: "Après :",
       after:
-        "les questions courantes reçoivent une réponse immédiate, les cas risqués deviennent des handoffs propres.",
-      header: "Support client",
+        "les questions reçoivent une réponse, l'intention est captée et les cas risqués deviennent des handoffs propres.",
+      header: "Conversation client",
       pill: "basé sur les sources",
       messages: [
         {
@@ -654,9 +654,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     adaptation: {
       eyebrow: "Adapté à votre produit",
-      title: "Un chatbot qui respecte votre site et votre identité",
+      title: "Un agent qui respecte votre site et votre identité",
       body:
-        "Le widget n'est pas une bulle générique posée sur la page. Nous adaptons le ton, les couleurs, les formes, les points d'entrée et le handoff pour qu'il semble faire partie de votre expérience client.",
+        "Le widget n'est pas une bulle générique posée sur la page. Nous adaptons le ton, les couleurs, les formes, les points d'entrée et le handoff pour qu'il semble faire partie de votre expérience client et de votre parcours d'achat.",
       sites: [
         {
           label: "B2B SaaS",
@@ -694,19 +694,19 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Cela vous parle ?",
       items: [
         {
-          text: "Votre équipe répond aux mêmes 20 questions chaque jour",
+          text: "Les clients posent les mêmes questions avant d'acheter",
           detail:
-            "Les tickets répétitifs épuisent l'équipe et rallongent les délais de réponse.",
+            "Quand les réponses sont lentes ou difficiles à trouver, de bons visiteurs décrochent.",
         },
         {
-          text: "Votre centre d'aide existe, mais les clients ne le lisent pas",
+          text: "Votre site a les réponses, mais les visiteurs les manquent",
           detail:
-            "L'information est là. Les clients ne la trouvent simplement pas assez vite.",
+            "L'information est là. Les clients ont simplement besoin d'un chemin plus rapide vers la bonne réponse.",
         },
         {
-          text: "Les chatbots génériques sonnent faux et empirent l'expérience",
+          text: "Les chatbots génériques sonnent faux et font perdre confiance",
           detail:
-            "Les réponses toutes faites frustrent les utilisateurs et escaladent au lieu de résoudre.",
+            "Les réponses toutes faites frustrent les utilisateurs au lieu de les aider à passer à l'étape suivante.",
         },
       ],
     },
@@ -716,13 +716,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       steps: [
         {
           num: "01",
-          title: "Nous ingérons vos docs",
-          desc: "Centre d'aide, FAQ, pages produit. Jusqu'à 500 pages.",
+          title: "Nous ingérons votre contenu",
+          desc: "Pages du site, FAQ, pages produit ou service. Jusqu'à 500 pages.",
         },
         {
           num: "02",
           title: "Nous construisons et réglons l'agent",
-          desc: "Réponses dans votre ton, escalade quand il n'est pas sûr.",
+          desc: "Réponses dans votre ton, prochaines étapes claires, escalade quand il n'est pas sûr.",
         },
         {
           num: "03",
@@ -758,9 +758,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     confidence: {
       eyebrow: "Confiance en production",
-      title: "Conçu pour les équipes support qui veulent garder le contrôle",
+      title: "Conçu pour les équipes qui veulent garder le contrôle",
       body:
-        "La valeur n'est pas seulement la réponse. C'est le comportement d'escalade, la trace de revue, la posture d'hébergement et le fait que le coeur de votre support ne soit pas loué à vie.",
+        "La valeur n'est pas seulement la réponse. C'est le comportement d'escalade, la trace de revue, la posture d'hébergement et le fait que le coeur de vos conversations clients ne soit pas loué à vie.",
       points: [
         {
           title: "Hébergement orienté UE",
@@ -786,19 +786,19 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     analytics: {
       eyebrow: "Analytique, inclus",
-      title: "Voyez ce que vos clients demandent vraiment",
+      title: "Voyez ce que vos clients demandent avant d'acheter",
       body:
-        "Chaque conversation est enregistrée, étiquetée et visible dans un tableau de bord pour le support, le produit et les ops. Les tendances apparaissent avant les tickets.",
+        "Chaque conversation est enregistrée, étiquetée et visible dans un tableau de bord pour les ventes, le support, le produit et les ops. Vous voyez ce que les gens veulent, ce qui les bloque et où votre site doit mieux répondre.",
       hostedBadge: "Hébergé en UE · données d'exemple",
       kpis: [
         { label: "Conversations · 7j", value: "2 418", delta: "+18 %" },
-        { label: "Résolues seules", value: "61 %", delta: "+4 pts" },
+        { label: "Réponses instantanées", value: "61 %", delta: "+4 pts" },
         { label: "Confiance moy.", value: "0,84", delta: "stable" },
         { label: "Escalades", value: "147", delta: "-12 %" },
       ],
       trafficTitle: "Conversations · 14 derniers jours",
-      trafficCaption: "Volume quotidien, avec les creux du week-end visibles.",
-      topicsTitle: "Sujets les plus demandés",
+      trafficCaption: "Engagement quotidien, avec les creux du week-end visibles.",
+      topicsTitle: "Questions avant conversion",
       topicsCaption: "Intentions principales sur 7 jours.",
       topics: [
         { name: "Tarifs & forfaits", count: 412 },
@@ -808,8 +808,8 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Remboursements", count: 134 },
         { name: "Limites API", count: 98 },
       ],
-      escalationsTitle: "Dernières escalades en faible confiance",
-      escalationsCaption: "Routées vers votre support, prêtes à triager.",
+      escalationsTitle: "Derniers handoffs",
+      escalationsCaption: "Envoyés à votre équipe avec le contexte de conversation.",
       escalations: [
         {
           question: "Puis-je exporter la facturation en CSV avec les lignes TVA UE ?",
@@ -830,7 +830,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "Commercial",
       title: "Un devis fixe avant de commencer",
       body:
-        "Nous cadrons le projet selon vos docs, votre handoff et vos contraintes de déploiement, puis validons le budget avant tout travail.",
+        "Nous cadrons le projet selon votre contenu, votre handoff et vos contraintes de déploiement, puis validons le budget avant tout travail.",
       buildLabel: "Build",
       buildValue: "Devis projet fixe",
       supportLabel: "Support continu",
@@ -839,7 +839,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       deliveryValue: "2 semaines",
       afterLabel: "Après livraison",
       afterValue: "Vous possédez tout. Pas de lock-in.",
-      cta: "Recevoir une démo sur vos docs",
+      cta: "Recevoir une démo sur votre site",
     },
     faq: {
       eyebrow: "FAQ",
@@ -848,7 +848,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           q: "En quoi est-ce différent d'Intercom Fin ou Zendesk AI ?",
           a:
-            "Ce sont des add-ons liés à leur écosystème. Ici, l'agent est autonome et construit autour de vos docs, workflows, règles d'escalade et contraintes d'hébergement. Vous pouvez le déployer sur votre site, le connecter à Slack ou email, et garder le code source.",
+            "Ce sont des add-ons liés à leur écosystème. Ici, l'agent client est autonome et construit autour de votre contenu, vos workflows, règles d'escalade et contraintes d'hébergement. Vous pouvez le déployer sur votre site, le connecter à Slack, email ou CRM, et garder le code source.",
         },
         {
           q: "Quel LLM utilisez-vous ?",
@@ -903,7 +903,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           q: "De quoi avez-vous besoin pour commencer ?",
           a:
-            "Une URL de docs ou de centre d'aide, les sujets support à réduire, la destination de handoff, les sujets que l'agent ne doit pas traiter et vos contraintes d'hébergement ou de confidentialité.",
+            "Une URL de site, docs ou centre d'aide, les questions à mieux traiter, la destination de handoff, les sujets que l'agent ne doit pas traiter et vos contraintes d'hébergement ou de confidentialité.",
         },
         {
           q: "Qui possède le code et le déploiement ?",
@@ -926,7 +926,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "À propos",
       title: "Construit par des ingénieurs, pas emballé dans des templates",
       body:
-        "BuildMyChatbot est un service spécialisé qui construit des chatbots support prêts pour la production. Chaque build est sur mesure : pas de templates, pas de plateforme white-label, pas de raccourcis. Nous gérons ingestion, tuning, déploiement et remise des clés.",
+        "BuildMyChatbot est un service spécialisé qui construit des agents IA prêts pour la production, pour les entreprises qui ont du contenu clair et des questions clients répétées. Chaque build est sur mesure : pas de templates, pas de plateforme white-label, pas de raccourcis. Nous gérons ingestion, tuning, déploiement et remise des clés.",
       bullets: [
         "RAG et tuning du retrieval",
         "Intégrations CRM, Slack et workflows",
@@ -934,27 +934,27 @@ export const siteContent: Record<Locale, SiteContent> = {
       ],
     },
     finalCta: {
-      title: "Vous voulez une démo sur vos propres docs ?",
+      title: "Vous voulez une démo sur votre propre site ?",
       subtitle: "Gratuit, sans appel obligatoire.",
       divider: "ou",
       emailCta: "Envoyez-nous un email",
     },
     form: {
       emailPlaceholder: "vous@entreprise.com",
-      urlPlaceholder: "https://docs.votresite.com",
+      urlPlaceholder: "https://www.votresite.com",
       submit: "Recevoir une démo gratuite",
       submitting: "Envoi...",
       successTitle: "Demande reçue",
       successBody:
-        "Nous construirons une démo sur vos docs et reviendrons vers vous sous 24 heures.",
+        "Nous construirons une démo sur le contenu de votre site et reviendrons vers vous sous 24 heures.",
     },
   },
   nl: {
     locale: "nl",
     meta: {
-      title: "BuildMyChatbot | Klantenservice-chatbots in twee weken",
+      title: "BuildMyChatbot | AI-agenten die vragen omzetten in klanten",
       description:
-        "Wij bouwen klantenservice-chatbots die antwoorden op basis van je helpdocs, veilig escaleren en eigendom blijven van jou.",
+        "Wij bouwen eigen AI-agenten die klantvragen beantwoorden, mensen naar de juiste volgende stap leiden en serieuze aanvragen naar je team sturen.",
     },
     common: {
       homeLabel: "BuildMyChatbot home",
@@ -964,18 +964,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageLabel: "Taal",
     },
     hero: {
-      navCta: "Vraag een docs-demo",
+      navCta: "Vraag een site-demo",
       badge: "Afgebakend project. EU-hosting. Broncode inbegrepen.",
-      titleTop: "Je eigen AI-supportagent,",
-      titleAccent: "live in twee weken.",
+      titleTop: "Je eigen AI-agent",
+      titleAccent: "die je website helpt verkopen.",
       subtitle:
-        "Wij bouwen een bron-gebaseerde supportagent op je helpdocs, koppelen hem aan je handoff-flow en dragen code, prompts en deployment-configs over. Geen platform lock-in. Geen gegok wanneer het antwoord niet in je docs staat.",
-      primaryCta: "Vraag een gratis demo op je docs",
+        "Wij bouwen een bron-gebaseerde agent op je websitecontent en docs, koppelen hem aan je handoff-flow en dragen code, prompts en deployment-configs over. Hij beantwoordt vragen, houdt bezoekers in beweging en stuurt serieuze aanvragen met context naar je team.",
+      primaryCta: "Vraag een gratis demo op je site",
       secondaryCta: "Boek 15 minuten",
       trustSignals: [
         "Antwoorden uit geïndexeerde bronnen",
-        "Escalatie bij lage zekerheid",
-        "Handoff via Slack, e-mail of widget",
+        "Betere bezoekersgesprekken",
+        "Handoff via Slack, e-mail of CRM",
       ],
     },
     heroChat: {
@@ -1006,16 +1006,16 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     transcript: {
       eyebrow: "Bekijk het in actie",
-      title: "Gefundeerde antwoorden, veilige escalatie",
+      title: "Vlotte antwoorden, duidelijke volgende stappen",
       body:
-        "De agent antwoordt alleen vanuit geïndexeerde content, houdt een bronspoor bij voor review en draagt over wanneer menselijk oordeel nodig is.",
+        "De agent antwoordt vanuit goedgekeurde content, houdt een bronspoor bij voor review en draagt over aan je team wanneer het gesprek een mens nodig heeft.",
       beforeLabel: "Voor:",
       before:
-        "herhaalde tickets over facturatie, login en setup stapelen zich op.",
+        "bezoekers twijfelen, zoeken te lang of vertrekken wanneer ze geen snel antwoord krijgen.",
       afterLabel: "Na:",
       after:
-        "veelgestelde vragen krijgen direct antwoord, risicovolle vragen worden nette handoffs.",
-      header: "Klantenservice",
+        "vragen krijgen antwoord, koopintentie wordt vastgelegd en risicovolle cases worden nette handoffs.",
+      header: "Klantgesprek",
       pill: "bron-gebaseerd",
       messages: [
         {
@@ -1042,9 +1042,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     adaptation: {
       eyebrow: "Past bij je product",
-      title: "Een chatbot die aansluit op je website en merk",
+      title: "Een agent die aansluit op je website en merk",
       body:
-        "De widget is geen generieke bubbel die we zomaar op de pagina zetten. We stemmen toon, kleuren, vorm, ingangspunten en handoff af zodat hij native aanvoelt in je klantbeleving.",
+        "De widget is geen generieke bubbel die we zomaar op de pagina zetten. We stemmen toon, kleuren, vorm, ingangspunten en handoff af zodat hij native aanvoelt in je klantbeleving en koopflow.",
       sites: [
         {
           label: "B2B SaaS",
@@ -1082,19 +1082,19 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Herkenbaar?",
       items: [
         {
-          text: "Je supportteam beantwoordt elke dag dezelfde 20 vragen",
+          text: "Klanten stellen dezelfde vragen voor ze kopen",
           detail:
-            "Repetitieve tickets kosten energie en vertragen responstijden.",
+            "Wanneer antwoorden traag of moeilijk te vinden zijn, haken goede bezoekers af.",
         },
         {
-          text: "Je helpcenter bestaat, maar klanten lezen het niet",
+          text: "Je website heeft de antwoorden, maar bezoekers missen ze",
           detail:
-            "De informatie is er. Klanten vinden ze gewoon niet snel genoeg.",
+            "De informatie is er. Klanten hebben gewoon een snellere route naar het juiste antwoord nodig.",
         },
         {
-          text: "Generieke chatbots voelen robotachtig en maken het erger",
+          text: "Generieke chatbots voelen robotachtig en kosten vertrouwen",
           detail:
-            "Standaardantwoorden frustreren gebruikers en escaleren tickets in plaats van ze op te lossen.",
+            "Standaardantwoorden frustreren gebruikers in plaats van hen naar de volgende stap te helpen.",
         },
       ],
     },
@@ -1104,13 +1104,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       steps: [
         {
           num: "01",
-          title: "We lezen je docs in",
-          desc: "Helpcenter, FAQ, productpagina's. Tot 500 pagina's.",
+          title: "We lezen je content in",
+          desc: "Websitepagina's, FAQ, product- of servicepagina's. Tot 500 pagina's.",
         },
         {
           num: "02",
           title: "We bouwen en tunen de agent",
-          desc: "Antwoorden in jouw toon, escalatie bij twijfel.",
+          desc: "Antwoorden in jouw toon, duidelijke volgende stappen, escalatie bij twijfel.",
         },
         {
           num: "03",
@@ -1146,9 +1146,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     confidence: {
       eyebrow: "Productievertrouwen",
-      title: "Gebouwd voor supportteams die controle nodig hebben",
+      title: "Gebouwd voor teams die controle nodig hebben",
       body:
-        "De waarde zit niet alleen in het antwoord. Het gaat om handoff-gedrag, reviewspoor, hostingkeuze en het feit dat je de kern van je supportproces niet voor altijd huurt.",
+        "De waarde zit niet alleen in het antwoord. Het gaat om handoff-gedrag, reviewspoor, hostingkeuze en het feit dat je de kern van je klantgesprekken niet voor altijd huurt.",
       points: [
         {
           title: "EU-first hosting",
@@ -1174,19 +1174,19 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     analytics: {
       eyebrow: "Analytics, inbegrepen",
-      title: "Zie precies wat je klanten vragen",
+      title: "Zie wat klanten vragen voor ze kopen",
       body:
-        "Elke conversatie wordt gelogd, gelabeld en getoond in een dashboard voor support, product en ops. Trends zie je voordat ze tickets worden.",
+        "Elke conversatie wordt gelogd, gelabeld en getoond in een dashboard voor sales, support, product en ops. Je ziet wat mensen willen, wat hen tegenhoudt en waar je site duidelijker moet antwoorden.",
       hostedBadge: "Gehost in EU · voorbeelddata",
       kpis: [
         { label: "Conversaties · 7d", value: "2.418", delta: "+18%" },
-        { label: "Auto-opgelost", value: "61%", delta: "+4 pt" },
+        { label: "Direct beantwoord", value: "61%", delta: "+4 pt" },
         { label: "Gem. zekerheid", value: "0,84", delta: "stabiel" },
         { label: "Escalaties", value: "147", delta: "-12%" },
       ],
       trafficTitle: "Conversaties · laatste 14 dagen",
-      trafficCaption: "Dagvolume — weekenddips meteen zichtbaar.",
-      topicsTitle: "Waar mensen over vragen",
+      trafficCaption: "Dagelijkse betrokkenheid, met weekenddips meteen zichtbaar.",
+      topicsTitle: "Vragen voor conversie",
       topicsCaption: "Top-intenties van de afgelopen 7 dagen.",
       topics: [
         { name: "Prijzen & abonnementen", count: 412 },
@@ -1196,8 +1196,8 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Terugbetalingen", count: 134 },
         { name: "API-limieten", count: 98 },
       ],
-      escalationsTitle: "Recente escalaties met lage zekerheid",
-      escalationsCaption: "Doorgestuurd naar je support, klaar om op te pakken.",
+      escalationsTitle: "Recente handoffs",
+      escalationsCaption: "Doorgestuurd naar je team met gesprekscontext.",
       escalations: [
         {
           question: "Kan ik de facturatie als CSV exporteren met EU-btw-regels?",
@@ -1218,7 +1218,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "Commercieel",
       title: "Een vaste offerte voor we starten",
       body:
-        "We scopen de build rond je docs, handoff-flow en deploymentvereisten, en leggen de prijs vast voor het werk begint.",
+        "We scopen de build rond je content, handoff-flow en deploymentvereisten, en leggen de prijs vast voor het werk begint.",
       buildLabel: "Build",
       buildValue: "Vaste projectofferte",
       supportLabel: "Doorlopende support",
@@ -1227,7 +1227,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       deliveryValue: "2 weken",
       afterLabel: "Na oplevering",
       afterValue: "Alles is van jou. Geen lock-in.",
-      cta: "Vraag een gratis demo op je docs",
+      cta: "Vraag een gratis demo op je site",
     },
     faq: {
       eyebrow: "FAQ",
@@ -1236,7 +1236,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           q: "Hoe verschilt dit van Intercom Fin of Zendesk AI?",
           a:
-            "Dat zijn platform-add-ons binnen hun ecosysteem. Dit is een standalone supportagent rond je docs, workflows, escalatieregels en hostingnoden. Je kan hem op je site deployen, koppelen aan Slack of e-mail, en de broncode behouden.",
+            "Dat zijn platform-add-ons binnen hun ecosysteem. Dit is een standalone klantgerichte agent rond je content, workflows, escalatieregels en hostingnoden. Je kan hem op je site deployen, koppelen aan Slack, e-mail of CRM, en de broncode behouden.",
         },
         {
           q: "Welk LLM gebruiken jullie?",
@@ -1291,7 +1291,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           q: "Wat hebben jullie nodig om te starten?",
           a:
-            "Een docs- of helpcenter-URL, de supporttopics die je wil verminderen, de handoff-bestemming, onderwerpen die de agent niet mag beantwoorden en je hosting- of privacyvereisten.",
+            "Een website-, docs- of helpcenter-URL, de vragen die je beter wil afhandelen, de handoff-bestemming, onderwerpen die de agent niet mag beantwoorden en je hosting- of privacyvereisten.",
         },
         {
           q: "Wie bezit de code en deployment?",
@@ -1314,7 +1314,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: "Over ons",
       title: "Custom gebouwd door engineers, niet verpakt in templates",
       body:
-        "BuildMyChatbot is een gespecialiseerde service die productieklare supportchatbots bouwt. Elke build is maatwerk: geen templates, geen white-label platform, geen shortcuts. Wij doen ingestion, tuning, deployment en dragen de sleutels over.",
+        "BuildMyChatbot is een gespecialiseerde service die productieklare AI-agenten bouwt voor bedrijven met duidelijke content en terugkerende klantvragen. Elke build is maatwerk: geen templates, geen white-label platform, geen shortcuts. Wij doen ingestion, tuning, deployment en dragen de sleutels over.",
       bullets: [
         "RAG en retrieval-tuning",
         "CRM-, Slack- en workflowintegraties",
@@ -1322,19 +1322,19 @@ export const siteContent: Record<Locale, SiteContent> = {
       ],
     },
     finalCta: {
-      title: "Wil je een demo op je eigen docs?",
+      title: "Wil je een demo op je eigen site?",
       subtitle: "Gratis, geen call vereist.",
       divider: "of",
       emailCta: "Stuur ons een e-mail",
     },
     form: {
       emailPlaceholder: "jij@bedrijf.com",
-      urlPlaceholder: "https://docs.jouwsite.com",
+      urlPlaceholder: "https://www.jouwsite.com",
       submit: "Vraag een gratis demo",
       submitting: "Versturen...",
       successTitle: "Aanvraag ontvangen",
       successBody:
-        "We bouwen een demo op je docs en komen binnen 24 uur bij je terug.",
+        "We bouwen een demo op je sitecontent en komen binnen 24 uur bij je terug.",
     },
   },
 };

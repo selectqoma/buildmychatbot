@@ -3,8 +3,9 @@ import {
   languageAlternates,
   siteUrl,
 } from "@/lib/seo";
+import { seoLandingPages } from "@/lib/seo-pages";
 
-const lastModified = new Date("2026-04-26");
+const lastModified = new Date("2026-04-28");
 
 function absolutePath(path: string) {
   return `${siteUrl}${path}`;
@@ -60,5 +61,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...seoLandingPages.map((page) => ({
+      url: absolutePath(`/${page.slug}`),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
   ];
 }

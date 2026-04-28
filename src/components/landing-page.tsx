@@ -5,6 +5,7 @@ import { SiteChatWidget } from "@/components/site-chat-widget";
 import Image from "next/image";
 import Link from "next/link";
 import { createJsonLd } from "@/lib/seo";
+import { seoLandingPages } from "@/lib/seo-pages";
 import {
   localeLabels,
   localeNames,
@@ -1015,6 +1016,15 @@ function Footer({ content }: { content: SiteContent }) {
           <a href="/terms" className="hover:text-foreground transition-colors">
             {content.common.termsLabel}
           </a>
+          {seoLandingPages.map((page) => (
+            <a
+              key={page.slug}
+              href={`/${page.slug}`}
+              className="hover:text-foreground transition-colors"
+            >
+              {page.eyebrow}
+            </a>
+          ))}
           <a
             href="mailto:hello@buildmychatbot.app"
             className="hover:text-foreground transition-colors"

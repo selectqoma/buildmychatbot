@@ -32,7 +32,7 @@ const copy: Record<Locale, WidgetCopy> = {
     title: "BuildMyChatbot assistant",
     status: "Answers from this site",
     intro:
-      "Ask about pricing, delivery, hosting, integrations, ownership, or getting a demo on your docs.",
+      "Ask about pricing, delivery, hosting, integrations, ownership, or getting a demo on your site.",
     placeholder: "Ask a question...",
     send: "Send",
     close: "Close chat",
@@ -47,7 +47,7 @@ const copy: Record<Locale, WidgetCopy> = {
     title: "Assistant BuildMyChatbot",
     status: "Réponses depuis ce site",
     intro:
-      "Posez une question sur le budget, le délai, l'hébergement, les intégrations, la propriété du code ou une démo sur vos docs.",
+      "Posez une question sur le budget, le délai, l'hébergement, les intégrations, la propriété du code ou une démo sur votre site.",
     placeholder: "Posez une question...",
     send: "Envoyer",
     close: "Fermer le chat",
@@ -62,7 +62,7 @@ const copy: Record<Locale, WidgetCopy> = {
     title: "BuildMyChatbot assistent",
     status: "Antwoorden van deze site",
     intro:
-      "Vraag naar budget, timing, hosting, integraties, eigendom of een demo op je eigen docs.",
+      "Vraag naar budget, timing, hosting, integraties, eigendom of een demo op je eigen site.",
     placeholder: "Stel een vraag...",
     send: "Verstuur",
     close: "Chat sluiten",

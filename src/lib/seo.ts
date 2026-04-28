@@ -43,10 +43,10 @@ export function createPageMetadata(locale: Locale): Metadata {
       locale: openGraphLocales[locale],
       images: [
         {
-          url: "/buildmychatbot-logo-transparent.png",
-          width: 1350,
-          height: 316,
-          alt: "buildmychatbot.app",
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: "BuildMyChatbot - your own AI agent for customer conversations",
         },
       ],
     },
@@ -54,7 +54,7 @@ export function createPageMetadata(locale: Locale): Metadata {
       card: "summary_large_image",
       title: content.meta.title,
       description: content.meta.description,
-      images: ["/buildmychatbot-logo-transparent.png"],
+      images: ["/opengraph-image"],
     },
     robots: {
       index: true,
@@ -96,7 +96,7 @@ export function createJsonLd(content: SiteContent) {
           },
         ],
         availableLanguage: ["English", "French", "Dutch"],
-        serviceType: "Customer service chatbot implementation",
+        serviceType: "Owned customer-facing AI agent implementation",
         url,
       },
       {
