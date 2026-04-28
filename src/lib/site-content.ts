@@ -192,10 +192,10 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Get a docs demo",
       badge: "Scoped project fee. EU-hosted. Full source handover.",
-      titleTop: "Your customer service chatbot,",
+      titleTop: "An owned AI support agent,",
       titleAccent: "live in two weeks.",
       subtitle:
-        "We build and deploy a chatbot that answers from your help docs, escalates when unsure, and cuts repetitive support tickets without locking you into another platform.",
+        "We build a source-grounded support agent on your help docs, connect it to your handoff flow, and hand over the code, prompts, and deployment configs. No platform lock-in. No guessing when the answer is not in your docs.",
       primaryCta: "Get a free demo on your docs",
       secondaryCta: "Book a 15-min call",
       trustSignals: [
@@ -401,7 +401,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "See exactly what your customers are asking",
       body:
         "Every conversation is logged, tagged, and surfaced in a dashboard you can hand to support, product, and ops. Trends show up before they become tickets.",
-      hostedBadge: "Hosted in EU · live demo data",
+      hostedBadge: "Hosted in EU · sample dashboard data",
       kpis: [
         { label: "Conversations · 7d", value: "2,418", delta: "+18%" },
         { label: "Auto-resolved", value: "61%", delta: "+4 pts" },
@@ -483,6 +483,41 @@ export const siteContent: Record<Locale, SiteContent> = {
             "Yes. The standard setup supports a website widget plus Slack or email handoff. Common CRM and helpdesk integrations can be connected through webhooks or API work during discovery.",
         },
         {
+          q: "Can we review answers before launch?",
+          a:
+            "Yes. The launch process includes review on realistic questions, risky edge cases, low-confidence behavior, and handoff copy before the agent goes live.",
+        },
+        {
+          q: "Can we approve which sources it uses?",
+          a:
+            "Yes. You choose the approved source set: help center articles, product docs, FAQs, policy pages, internal docs, or a narrower subset for the first release.",
+        },
+        {
+          q: "Can it avoid account-specific questions?",
+          a:
+            "Yes. Account-specific, billing-sensitive, legal, medical, or operationally risky questions can be routed to a human instead of answered automatically.",
+        },
+        {
+          q: "Can we delete logs or control retention?",
+          a:
+            "Yes. Log retention is configurable per deployment. We can minimize logs, redact sensitive fields, or hand retention controls to your infrastructure team.",
+        },
+        {
+          q: "Do you sign a DPA?",
+          a:
+            "Yes. For production deployments that process customer data, we can sign a data processing agreement and document subprocessors, hosting, retention, and deletion terms.",
+        },
+        {
+          q: "What happens after the two-week support period?",
+          a:
+            "You keep the code, prompts, retrieval settings, deployment configs, and handover docs. You can run it yourself or keep us on a monthly care plan for monitoring, tuning, and content re-ingestion.",
+        },
+        {
+          q: "What do you need from us to start?",
+          a:
+            "A docs or help center URL, the support topics you want to reduce, the handoff destination, any topics the agent must not answer, and your hosting or privacy constraints.",
+        },
+        {
           q: "Who owns the code and deployment?",
           a:
             "You do. Full source code, deployment configs, and documentation are handed over at delivery.",
@@ -543,10 +578,10 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Recevoir une démo",
       badge: "Projet cadré. Hébergement UE. Code source remis.",
-      titleTop: "Votre chatbot de service client,",
+      titleTop: "Votre agent support IA propriétaire,",
       titleAccent: "en ligne en deux semaines.",
       subtitle:
-        "Nous construisons et déployons un chatbot qui répond à partir de votre documentation, escalade quand il n'est pas sûr et réduit les tickets répétitifs sans vous enfermer dans une plateforme.",
+        "Nous construisons un agent support sourcé sur votre documentation, le connectons à votre handoff, puis vous remettons le code, les prompts et les configs de déploiement. Pas de lock-in. Pas de réponse inventée si elle n'est pas dans vos docs.",
       primaryCta: "Recevoir une démo sur vos docs",
       secondaryCta: "Réserver 15 min",
       trustSignals: [
@@ -754,7 +789,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Voyez ce que vos clients demandent vraiment",
       body:
         "Chaque conversation est enregistrée, étiquetée et visible dans un tableau de bord pour le support, le produit et les ops. Les tendances apparaissent avant les tickets.",
-      hostedBadge: "Hébergé en UE · données de démo",
+      hostedBadge: "Hébergé en UE · données d'exemple",
       kpis: [
         { label: "Conversations · 7j", value: "2 418", delta: "+18 %" },
         { label: "Résolues seules", value: "61 %", delta: "+4 pts" },
@@ -836,6 +871,41 @@ export const siteContent: Record<Locale, SiteContent> = {
             "Oui. Le setup standard couvre un widget web et un handoff Slack ou email. Les intégrations CRM et helpdesk courantes peuvent être connectées via webhooks ou API pendant la découverte.",
         },
         {
+          q: "Peut-on revoir les réponses avant le lancement ?",
+          a:
+            "Oui. Le lancement inclut une revue sur des questions réalistes, des cas risqués, le comportement en faible confiance et les textes de handoff avant la mise en ligne.",
+        },
+        {
+          q: "Peut-on approuver les sources utilisées ?",
+          a:
+            "Oui. Vous choisissez les sources autorisées : centre d'aide, docs produit, FAQ, pages de politique, docs internes ou un périmètre plus restreint pour la première version.",
+        },
+        {
+          q: "Peut-il éviter les questions spécifiques à un compte ?",
+          a:
+            "Oui. Les questions spécifiques à un compte, sensibles pour la facturation, juridiques, médicales ou opérationnellement risquées peuvent être routées vers un humain.",
+        },
+        {
+          q: "Peut-on supprimer les logs ou contrôler la rétention ?",
+          a:
+            "Oui. La rétention des logs est configurable par déploiement. Nous pouvons minimiser les logs, masquer les champs sensibles ou donner le contrôle à votre équipe infrastructure.",
+        },
+        {
+          q: "Signez-vous un DPA ?",
+          a:
+            "Oui. Pour les déploiements en production qui traitent des données clients, nous pouvons signer un accord de traitement des données et documenter les sous-traitants, l'hébergement, la rétention et la suppression.",
+        },
+        {
+          q: "Que se passe-t-il après les deux semaines de support ?",
+          a:
+            "Vous gardez le code, les prompts, les paramètres de retrieval, les configs de déploiement et la documentation de handover. Vous pouvez l'exploiter vous-même ou garder un suivi mensuel.",
+        },
+        {
+          q: "De quoi avez-vous besoin pour commencer ?",
+          a:
+            "Une URL de docs ou de centre d'aide, les sujets support à réduire, la destination de handoff, les sujets que l'agent ne doit pas traiter et vos contraintes d'hébergement ou de confidentialité.",
+        },
+        {
           q: "Qui possède le code et le déploiement ?",
           a:
             "Vous. Le code source, les configs de déploiement et la documentation sont remis à la livraison.",
@@ -896,10 +966,10 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Vraag een docs-demo",
       badge: "Afgebakend project. EU-hosting. Broncode inbegrepen.",
-      titleTop: "Je klantenservice-chatbot,",
+      titleTop: "Je eigen AI-supportagent,",
       titleAccent: "live in twee weken.",
       subtitle:
-        "Wij bouwen en deployen een chatbot die antwoordt op basis van je helpdocs, escaleert bij twijfel en repetitieve supporttickets vermindert zonder platform lock-in.",
+        "Wij bouwen een bron-gebaseerde supportagent op je helpdocs, koppelen hem aan je handoff-flow en dragen code, prompts en deployment-configs over. Geen platform lock-in. Geen gegok wanneer het antwoord niet in je docs staat.",
       primaryCta: "Vraag een gratis demo op je docs",
       secondaryCta: "Boek 15 minuten",
       trustSignals: [
@@ -1107,7 +1177,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Zie precies wat je klanten vragen",
       body:
         "Elke conversatie wordt gelogd, gelabeld en getoond in een dashboard voor support, product en ops. Trends zie je voordat ze tickets worden.",
-      hostedBadge: "Gehost in EU · demo-data",
+      hostedBadge: "Gehost in EU · voorbeelddata",
       kpis: [
         { label: "Conversaties · 7d", value: "2.418", delta: "+18%" },
         { label: "Auto-opgelost", value: "61%", delta: "+4 pt" },
@@ -1187,6 +1257,41 @@ export const siteContent: Record<Locale, SiteContent> = {
           q: "Kan dit integreren met mijn CRM?",
           a:
             "Ja. De standaardsetup ondersteunt een website-widget plus Slack- of e-mailhandoff. Veel CRM- en helpdeskintegraties kunnen via webhooks of API-werk gekoppeld worden.",
+        },
+        {
+          q: "Kunnen we antwoorden reviewen voor launch?",
+          a:
+            "Ja. Voor launch reviewen we realistische vragen, risicovolle randgevallen, gedrag bij lage zekerheid en handoff-copy voordat de agent live gaat.",
+        },
+        {
+          q: "Kunnen we goedkeuren welke bronnen hij gebruikt?",
+          a:
+            "Ja. Jij kiest de toegestane bronnen: helpcenterartikelen, productdocs, FAQ's, beleidspagina's, interne docs of een kleiner bronpakket voor de eerste release.",
+        },
+        {
+          q: "Kan hij account-specifieke vragen vermijden?",
+          a:
+            "Ja. Account-specifieke, facturatiegevoelige, juridische, medische of operationeel risicovolle vragen kunnen naar een mens worden gerouteerd.",
+        },
+        {
+          q: "Kunnen we logs verwijderen of retentie controleren?",
+          a:
+            "Ja. Logretentie is configureerbaar per deployment. We kunnen logs minimaliseren, gevoelige velden redacteren of retentiecontrole aan je infrastructuurteam overdragen.",
+        },
+        {
+          q: "Tekenen jullie een DPA?",
+          a:
+            "Ja. Voor productiedeployments die klantdata verwerken, kunnen we een data processing agreement tekenen en subprocessors, hosting, retentie en verwijdering documenteren.",
+        },
+        {
+          q: "Wat gebeurt er na de supportperiode van twee weken?",
+          a:
+            "Je behoudt code, prompts, retrieval-instellingen, deployment-configs en handover-docs. Je kan zelf draaien of ons op een maandelijkse nazorgformule houden.",
+        },
+        {
+          q: "Wat hebben jullie nodig om te starten?",
+          a:
+            "Een docs- of helpcenter-URL, de supporttopics die je wil verminderen, de handoff-bestemming, onderwerpen die de agent niet mag beantwoorden en je hosting- of privacyvereisten.",
         },
         {
           q: "Wie bezit de code en deployment?",
