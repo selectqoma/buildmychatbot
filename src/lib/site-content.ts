@@ -178,9 +178,9 @@ export const siteContent: Record<Locale, SiteContent> = {
   en: {
     locale: "en",
     meta: {
-      title: "BuildMyChatbot | AI agents that turn questions into customers",
+      title: "BuildMyChatbot | Your own AI support agent in two weeks",
       description:
-        "We build your own AI agent to answer customer questions, guide people to the right next step, and hand serious enquiries to your team.",
+        "We build your own AI support agent to answer customer questions, guide people to the right next step, and hand serious enquiries to your team.",
     },
     common: {
       homeLabel: "BuildMyChatbot home",
@@ -192,8 +192,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Get a site demo",
       badge: "Scoped project fee. EU-hosted. Full source handover.",
-      titleTop: "Your own AI agent",
-      titleAccent: "that helps your website sell.",
+      titleTop: "Your own AI support agent,",
+      titleAccent: "live in two weeks.",
       subtitle:
         "We build a source-grounded agent on your website content and docs, connect it to your handoff flow, and hand over the code, prompts, and deployment configs. It answers questions, keeps visitors moving, and sends serious enquiries to your team with context.",
       primaryCta: "Get a free demo on your site",
@@ -564,9 +564,9 @@ export const siteContent: Record<Locale, SiteContent> = {
   fr: {
     locale: "fr",
     meta: {
-      title: "BuildMyChatbot | Agents IA qui transforment les questions en clients",
+      title: "BuildMyChatbot | Votre agent support IA en deux semaines",
       description:
-        "Nous créons des agents IA propriétaires qui répondent aux questions clients, guident vers la bonne étape et transmettent les demandes sérieuses à votre équipe.",
+        "Nous créons votre agent support IA pour répondre aux questions clients, guider vers la bonne étape et transmettre les demandes sérieuses à votre équipe.",
     },
     common: {
       homeLabel: "Accueil BuildMyChatbot",
@@ -578,8 +578,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Recevoir une démo",
       badge: "Projet cadré. Hébergement UE. Code source remis.",
-      titleTop: "Votre agent IA propriétaire",
-      titleAccent: "qui aide votre site à vendre.",
+      titleTop: "Votre agent support IA,",
+      titleAccent: "en ligne en deux semaines.",
       subtitle:
         "Nous construisons un agent sourcé sur le contenu de votre site et vos docs, le connectons à votre handoff, puis vous remettons le code, les prompts et les configs de déploiement. Il répond aux questions, garde les visiteurs engagés et transmet les demandes sérieuses avec le contexte.",
       primaryCta: "Recevoir une démo sur votre site",
@@ -952,9 +952,9 @@ export const siteContent: Record<Locale, SiteContent> = {
   nl: {
     locale: "nl",
     meta: {
-      title: "BuildMyChatbot | AI-agenten die vragen omzetten in klanten",
+      title: "BuildMyChatbot | Je eigen AI-supportagent in twee weken",
       description:
-        "Wij bouwen eigen AI-agenten die klantvragen beantwoorden, mensen naar de juiste volgende stap leiden en serieuze aanvragen naar je team sturen.",
+        "Wij bouwen je eigen AI-supportagent om klantvragen te beantwoorden, mensen naar de juiste volgende stap te leiden en serieuze aanvragen naar je team te sturen.",
     },
     common: {
       homeLabel: "BuildMyChatbot home",
@@ -966,8 +966,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     hero: {
       navCta: "Vraag een site-demo",
       badge: "Afgebakend project. EU-hosting. Broncode inbegrepen.",
-      titleTop: "Je eigen AI-agent",
-      titleAccent: "die je website helpt verkopen.",
+      titleTop: "Je eigen AI-supportagent,",
+      titleAccent: "live in twee weken.",
       subtitle:
         "Wij bouwen een bron-gebaseerde agent op je websitecontent en docs, koppelen hem aan je handoff-flow en dragen code, prompts en deployment-configs over. Hij beantwoordt vragen, houdt bezoekers in beweging en stuurt serieuze aanvragen met context naar je team.",
       primaryCta: "Vraag een gratis demo op je site",

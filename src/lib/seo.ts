@@ -46,7 +46,7 @@ export function createPageMetadata(locale: Locale): Metadata {
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "BuildMyChatbot - your own AI agent for customer conversations",
+          alt: "BuildMyChatbot - your own AI support agent for customer conversations",
         },
       ],
     },
