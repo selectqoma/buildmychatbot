@@ -29,10 +29,10 @@ type WidgetCopy = {
 const copy: Record<Locale, WidgetCopy> = {
   en: {
     button: "Chat",
-    title: "BuildMyChatbot assistant",
+    title: "AI enquiry assistant",
     status: "Answers from this site",
     intro:
-      "Ask about pricing, delivery, hosting, integrations, ownership, or getting a demo on your site.",
+      "Ask about pricing, lead qualification, handoff, follow-up, hosting, or getting a demo on your site.",
     placeholder: "Ask a question...",
     send: "Send",
     close: "Close chat",
@@ -40,14 +40,14 @@ const copy: Record<Locale, WidgetCopy> = {
     loading: "Checking the site...",
     error: "I could not answer right now. Email hello@buildmychatbot.app.",
     email: "Email us",
-    quick: ["What does it cost?", "How fast can you deploy?", "Where is data hosted?"],
+    quick: ["What does it cost?", "Can it qualify leads?", "Can it follow up?"],
   },
   fr: {
     button: "Chat",
-    title: "Assistant BuildMyChatbot",
+    title: "Assistant demandes IA",
     status: "Réponses depuis ce site",
     intro:
-      "Posez une question sur le budget, le délai, l'hébergement, les intégrations, la propriété du code ou une démo sur votre site.",
+      "Posez une question sur les tarifs, la qualification, le handoff, les relances, l'hébergement ou une démo sur votre site.",
     placeholder: "Posez une question...",
     send: "Envoyer",
     close: "Fermer le chat",
@@ -55,14 +55,14 @@ const copy: Record<Locale, WidgetCopy> = {
     loading: "Je vérifie le site...",
     error: "Je ne peux pas répondre maintenant. Email : hello@buildmychatbot.app.",
     email: "Nous écrire",
-    quick: ["Quel est le budget ?", "Quel délai ?", "Où sont hébergées les données ?"],
+    quick: ["Quel est le prix ?", "Peut-il qualifier ?", "Peut-il relancer ?"],
   },
   nl: {
     button: "Chat",
-    title: "BuildMyChatbot assistent",
+    title: "AI-aanvraagassistent",
     status: "Antwoorden van deze site",
     intro:
-      "Vraag naar budget, timing, hosting, integraties, eigendom of een demo op je eigen site.",
+      "Vraag naar prijzen, leadkwalificatie, handoff, follow-up, hosting of een demo op je site.",
     placeholder: "Stel een vraag...",
     send: "Verstuur",
     close: "Chat sluiten",
@@ -70,7 +70,7 @@ const copy: Record<Locale, WidgetCopy> = {
     loading: "Ik check de site...",
     error: "Ik kan nu niet antwoorden. Mail hello@buildmychatbot.app.",
     email: "Mail ons",
-    quick: ["Wat kost het?", "Hoe snel kan dit live?", "Waar wordt data gehost?"],
+    quick: ["Wat kost het?", "Kan het leads kwalificeren?", "Kan het opvolgen?"],
   },
 };
 

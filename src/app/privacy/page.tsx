@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy | BuildMyChatbot",
   description:
-    "How BuildMyChatbot handles demo requests, support-agent logs, AI model processing, retention, subprocessors, and data rights.",
+    "How BuildMyChatbot handles demo requests, AI enquiry system logs, AI model processing, retention, subprocessors, and data rights.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -28,16 +28,16 @@ export default function PrivacyPage() {
             </h2>
             <p>
               When you submit a demo request, we collect your email address and
-              optionally the URL of your documentation site. If you contact us
+              optionally your website URL. If you contact us
               by email, we also process the information you choose to include in
               that message.
             </p>
             <p className="mt-3">
               For production projects, the exact data processed depends on the
-              scope you approve. This may include approved help center content,
-              product documentation, configuration details, support handoff
+              scope you approve. This may include approved website content,
+              FAQs, service pages, configuration details, lead handoff
               destinations, and limited conversation logs needed to operate and
-              improve the support agent.
+              improve the enquiry system.
             </p>
           </section>
 
@@ -47,10 +47,10 @@ export default function PrivacyPage() {
             </h2>
             <p>We use collected information to:</p>
             <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>Prepare a custom demo of our support agent on your documentation</li>
+              <li>Prepare a custom demo of an AI enquiry flow on your website</li>
               <li>Respond to your inquiries</li>
-              <li>Scope, build, deploy, and support an approved project</li>
-              <li>Monitor answer quality, escalation behavior, and source coverage</li>
+              <li>Scope, build, deploy, and tune an approved project</li>
+              <li>Monitor answer quality, handoff behavior, follow-up, and source coverage</li>
             </ul>
             <p className="mt-3">
               We do not sell your personal information or share it with third
@@ -81,7 +81,7 @@ export default function PrivacyPage() {
               4. AI Model Processing
             </h2>
             <p>
-              When you interact with a demo or production support agent, your
+              When you interact with a demo or production AI enquiry assistant, your
               messages may be processed by an AI model provider to generate a
               response. We usually work with current OpenAI or Anthropic models,
               then choose the provider and configuration based on the approved
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
             <p>
               Demo request emails and project communications are retained as
               long as needed to respond, prepare the demo, and maintain business
-              records. Demo chatbot interactions are kept only as long as needed
+              records. Demo assistant interactions are kept only as long as needed
               to troubleshoot and evaluate the demo, unless we agree otherwise
               with you.
             </p>

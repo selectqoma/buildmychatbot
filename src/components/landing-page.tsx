@@ -5,7 +5,6 @@ import { SiteChatWidget } from "@/components/site-chat-widget";
 import Image from "next/image";
 import Link from "next/link";
 import { createJsonLd } from "@/lib/seo";
-import { seoLandingPages } from "@/lib/seo-pages";
 import {
   localeLabels,
   localeNames,
@@ -27,12 +26,14 @@ export function LandingPage({ content }: { content: SiteContent }) {
       />
       <Hero content={content} />
       <ProofTranscript content={content.transcript} />
-      <BrandAdaptation content={content.adaptation} />
       <Problem content={content.problem} />
-      <HowItWorks content={content.process} />
       <WhatsIncluded content={content.deliverables} />
-      <SecurityAndOwnership content={content.confidence} />
+      <Offer content={content.offer} />
+      <UseCases content={content.useCases} />
+      <HowItWorks content={content.process} />
+      <BrandAdaptation content={content.adaptation} />
       <AnalyticsPreview content={content.analytics} />
+      <SecurityAndOwnership content={content.confidence} />
       <Pricing content={content.commercials} />
       <FAQSection content={content.faq} />
       <About content={content} />
@@ -58,6 +59,17 @@ function Hero({ content }: { content: SiteContent }) {
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-20 flex items-center justify-between">
           <Logo locale={content.locale} label={content.common.homeLabel} />
+          <nav className="hidden items-center gap-5 text-sm font-medium text-muted lg:flex">
+            {content.hero.navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="transition-colors hover:text-foreground"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
           <div className="flex items-center gap-3">
             <LanguageSwitcher current={content.locale} />
             <a
@@ -481,13 +493,13 @@ function HowItWorks({ content }: { content: SiteContent["process"] }) {
   ];
 
   return (
-    <section className="px-6 py-20 bg-surface border-t border-border">
-      <div className="mx-auto max-w-4xl">
+    <section id="process" className="px-6 py-20 bg-surface border-t border-border">
+      <div className="mx-auto max-w-6xl">
         <p className="text-sm font-medium text-accent mb-3">
           {content.eyebrow}
         </p>
         <h2 className="text-2xl font-bold md:text-3xl">{content.title}</h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
           {content.steps.map((s, i) => (
             <div
               key={s.num}
@@ -495,7 +507,7 @@ function HowItWorks({ content }: { content: SiteContent["process"] }) {
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-accent-light text-accent">
-                  {icons[i]}
+                  {icons[i % icons.length]}
                 </div>
                 <span className="text-3xl font-bold text-border">{s.num}</span>
               </div>
@@ -504,7 +516,7 @@ function HowItWorks({ content }: { content: SiteContent["process"] }) {
                 {s.desc}
               </p>
               {i < content.steps.length - 1 && (
-                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-border z-10">
+                <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-border z-10">
                   <svg
                     className="w-6 h-6"
                     fill="none"
@@ -535,53 +547,28 @@ function WhatsIncluded({
   content: SiteContent["deliverables"];
 }) {
   return (
-    <section className="px-6 py-20 border-t border-border">
-      <div className="mx-auto max-w-4xl">
+    <section id="install" className="px-6 py-20 border-t border-border">
+      <div className="mx-auto max-w-5xl">
         <p className="text-sm font-medium text-accent mb-3">
           {content.eyebrow}
         </p>
         <h2 className="text-2xl font-bold md:text-3xl">
           {content.title}
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/20 bg-accent-light/20 p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent mb-5">
-              {content.scopedBuild}
-            </p>
-            <ul className="space-y-3.5">
-              {content.included.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm">
-                  <CheckIcon />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-xl border border-border bg-surface/50 p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-muted mb-5">
-              {content.carePlan}
-            </p>
-            <ul className="space-y-3.5">
-              {content.optional.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-sm text-muted"
-                >
-                  <PlusIcon />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
-          {content.integrations.map((item) => (
-              <div
-                key={item}
-                className="rounded-lg border border-border bg-white px-4 py-3 text-center text-sm font-medium"
-              >
-                {item}
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {content.items.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-xl border border-border bg-white p-5 shadow-sm shadow-black/[0.02]"
+            >
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-light text-accent">
+                <CheckIcon />
               </div>
+              <h3 className="font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {item.body}
+              </p>
+            </div>
           ))}
         </div>
       </div>
@@ -607,21 +594,72 @@ function CheckIcon() {
   );
 }
 
-function PlusIcon() {
+/* ─── Offer ─── */
+function Offer({ content }: { content: SiteContent["offer"] }) {
   return (
-    <svg
-      className="w-5 h-5 text-muted shrink-0 mt-0.5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 4.5v15m7.5-7.5h-15"
-      />
-    </svg>
+    <section className="border-t border-border bg-surface/40 px-6 py-20">
+      <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+        <div>
+          <p className="mb-3 text-sm font-medium text-accent">
+            {content.eyebrow}
+          </p>
+          <h2 className="text-2xl font-bold md:text-3xl">
+            {content.title}
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted">
+            {content.body}
+          </p>
+          <a
+            href="#book"
+            className="mt-8 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-md shadow-accent/25 transition-all hover:bg-accent-dark"
+          >
+            {content.cta}
+          </a>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {content.included.map((item) => (
+            <div
+              key={item}
+              className="flex items-start gap-3 rounded-xl border border-border bg-white p-4 text-sm"
+            >
+              <CheckIcon />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Use Cases ─── */
+function UseCases({ content }: { content: SiteContent["useCases"] }) {
+  return (
+    <section id="use-cases" className="border-t border-border bg-white px-6 py-20">
+      <div className="mx-auto max-w-5xl">
+        <p className="mb-3 text-sm font-medium text-accent">
+          {content.eyebrow}
+        </p>
+        <h2 className="text-2xl font-bold md:text-3xl">
+          {content.title}
+        </h2>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {content.items.map((item) => (
+            <div key={item.title} className="rounded-xl border border-border bg-surface/40 p-5">
+              <h3 className="font-semibold">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {item.body}
+              </p>
+              {item.note && (
+                <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs leading-relaxed text-amber-800">
+                  {item.note}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -871,8 +909,8 @@ function AnalyticsPreview({
 /* ─── Pricing ─── */
 function Pricing({ content }: { content: SiteContent["commercials"] }) {
   return (
-    <section className="px-6 py-20 border-t border-border">
-      <div className="mx-auto max-w-2xl">
+    <section id="pricing" className="px-6 py-20 border-t border-border">
+      <div className="mx-auto max-w-6xl">
         <div className="text-center mb-10">
           <p className="text-sm font-medium text-accent mb-3">
             {content.eyebrow}
@@ -884,43 +922,30 @@ function Pricing({ content }: { content: SiteContent["commercials"] }) {
             {content.body}
           </p>
         </div>
-        <div className="rounded-2xl border-2 border-accent/20 bg-white p-8 shadow-lg shadow-accent/5">
-          <div className="space-y-5">
-            <div className="flex justify-between items-baseline">
-              <span className="text-muted text-sm">{content.buildLabel}</span>
-              <div className="text-right">
-                <span className="text-xl font-semibold">
-                  {content.buildValue}
-                </span>
-              </div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {content.cards.map((card, index) => (
+            <div
+              key={card.title}
+              className={`rounded-2xl border bg-white p-6 shadow-lg shadow-black/[0.03] ${
+                index === 1 ? "border-accent/30 ring-4 ring-accent-light/40" : "border-border"
+              }`}
+            >
+              <h3 className="font-semibold">{card.title}</h3>
+              <p className="mt-4 text-2xl font-bold tracking-tight">
+                {card.price}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {card.body}
+              </p>
             </div>
-            <div className="flex justify-between items-baseline">
-              <span className="text-muted text-sm">{content.supportLabel}</span>
-              <div className="text-right">
-                <span className="text-xl font-semibold">
-                  {content.supportValue}
-                </span>
-              </div>
-            </div>
-            <hr className="border-border" />
-            <div className="flex justify-between items-baseline">
-              <span className="text-muted text-sm">{content.deliveryLabel}</span>
-              <span className="font-semibold">{content.deliveryValue}</span>
-            </div>
-            <div className="flex justify-between items-baseline">
-              <span className="text-muted text-sm">{content.afterLabel}</span>
-              <span className="text-sm text-muted">
-                {content.afterValue}
-              </span>
-            </div>
-          </div>
-          <a
-            href="#book"
-            className="mt-8 block w-full text-center rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-accent/25 hover:bg-accent-dark hover:shadow-lg transition-all"
-          >
-            {content.cta}
-          </a>
+          ))}
         </div>
+        <a
+          href="#book"
+          className="mx-auto mt-8 block max-w-sm rounded-lg bg-accent px-6 py-3.5 text-center text-sm font-semibold text-white shadow-md shadow-accent/25 transition-all hover:bg-accent-dark hover:shadow-lg"
+        >
+          {content.cta}
+        </a>
       </div>
     </section>
   );
@@ -1016,15 +1041,6 @@ function Footer({ content }: { content: SiteContent }) {
           <a href="/terms" className="hover:text-foreground transition-colors">
             {content.common.termsLabel}
           </a>
-          {seoLandingPages.map((page) => (
-            <a
-              key={page.slug}
-              href={`/${page.slug}`}
-              className="hover:text-foreground transition-colors"
-            >
-              {page.eyebrow}
-            </a>
-          ))}
           <a
             href="mailto:hello@buildmychatbot.app"
             className="hover:text-foreground transition-colors"

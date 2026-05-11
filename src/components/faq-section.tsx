@@ -2,7 +2,7 @@ import type { SiteContent } from "@/lib/site-content";
 
 export function FAQSection({ content }: { content: SiteContent["faq"] }) {
   return (
-    <section className="px-6 py-20 bg-surface border-t border-border">
+    <section id="faq" className="px-6 py-20 bg-surface border-t border-border">
       <div className="mx-auto max-w-5xl">
         <p className="text-sm font-medium text-accent mb-3">
           {content.eyebrow}

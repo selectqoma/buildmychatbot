@@ -26,10 +26,10 @@ export default function TermsPage() {
               1. Service Description
             </h2>
             <p>
-              BuildMyChatbot builds custom AI support agents trained on your
-              documentation. The service includes ingestion of your content,
-              building and tuning the agent, deployment, and optional ongoing
-              maintenance.
+              BuildMyChatbot installs custom AI enquiry systems for service
+              businesses. The service can include website content ingestion,
+              AI assistant setup, smart intake, lead handoff, automated
+              follow-up, deployment, and optional ongoing maintenance.
             </p>
           </section>
 
@@ -39,8 +39,8 @@ export default function TermsPage() {
             </h2>
             <p>
               The standard delivery timeline is 2 weeks from project kickoff,
-              subject to timely provision of documentation and feedback. A 2-week
-              support period follows delivery.
+              subject to timely provision of website access, content, and
+              feedback. A tuning period follows delivery when included in scope.
             </p>
           </section>
 
@@ -50,7 +50,7 @@ export default function TermsPage() {
             </h2>
             <p>
               Pricing is agreed in writing before project kickoff and may
-              include a fixed build fee plus optional ongoing support. All
+              include a fixed build fee plus optional ongoing care. All
               prices exclude applicable taxes unless otherwise stated.
             </p>
           </section>
@@ -72,7 +72,7 @@ export default function TermsPage() {
             <p>
               BuildMyChatbot provides AI-powered tools that may occasionally
               produce inaccurate responses. We are not liable for decisions made
-              based on chatbot outputs. Our total liability is limited to the
+              based on assistant outputs. Our total liability is limited to the
               amount paid for the service.
             </p>
           </section>
@@ -82,7 +82,8 @@ export default function TermsPage() {
               6. Data Processing
             </h2>
             <p>
-              Your documentation is processed to build the agent. All data
+              Your approved website content and related materials are processed
+              to build the enquiry system. All data
               handling complies with GDPR. See our{" "}
               <Link href="/privacy" className="text-accent hover:underline">
                 Privacy Policy

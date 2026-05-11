@@ -14,7 +14,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageContent }) {
           name: "BuildMyChatbot",
           url: "https://buildmychatbot.app",
         },
-        serviceType: "Owned customer-facing AI agent implementation",
+        serviceType: "Done-for-you AI enquiry system implementation",
         url: `https://buildmychatbot.app/${page.slug}`,
       },
       {
@@ -49,7 +49,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageContent }) {
               href="/#book"
               className="rounded-lg bg-accent px-4 py-2 font-semibold text-white hover:bg-accent-dark"
             >
-              Get a site demo
+              Get a demo
             </Link>
           </nav>
 
@@ -70,8 +70,8 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageContent }) {
           <div>
             <h2 className="text-2xl font-bold">{page.comparisonTitle}</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              The offer is intentionally narrow: an owned, source-grounded
-              customer-facing agent connected to the stack you already use.
+              The offer is intentionally narrow: a done-for-you AI enquiry
+              workflow connected to the channels your team already uses.
             </p>
           </div>
           <ul className="grid gap-3 text-sm leading-relaxed text-muted">
@@ -125,8 +125,8 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageContent }) {
             Want to see it on your own site?
           </h2>
           <p className="mt-3 text-muted">
-            Send a website or docs URL and we will prepare a focused demo
-            around your repeated customer questions.
+            Send a website URL and we will prepare a focused demo around your
+            visitor questions and enquiry flow.
           </p>
           <Link
             href="/#book"

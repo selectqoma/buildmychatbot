@@ -46,7 +46,7 @@ export function createPageMetadata(locale: Locale): Metadata {
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "BuildMyChatbot - your own AI support agent for customer conversations",
+          alt: "BuildMyChatbot - AI enquiry systems for service businesses",
         },
       ],
     },
@@ -96,7 +96,7 @@ export function createJsonLd(content: SiteContent) {
           },
         ],
         availableLanguage: ["English", "French", "Dutch"],
-        serviceType: "Owned customer-facing AI agent implementation",
+        serviceType: "Done-for-you AI enquiry system implementation",
         url,
       },
       {
